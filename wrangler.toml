@@ -1,0 +1,27 @@
+name = "pitchgrid-website"
+compatibility_date = "2024-06-01"
+
+[env.production]
+# Cloudflare Pages configuration
+# Build command: No build required - static site
+# Build output directory: public
+# Root directory: (default)
+
+# Custom headers for better performance
+[[env.production.rules]]
+field = "pathname"
+operator = "matches"
+value = ".*\\.(mp4|webm)$"
+headers = { "Cache-Control" = "max-age=31536000" }
+
+[[env.production.rules]]
+field = "pathname"
+operator = "matches"
+value = ".*\\.(css|js|png|jpg|jpeg|gif|ico|svg)$"
+headers = { "Cache-Control" = "max-age=31536000" }
+
+[[env.production.rules]]
+field = "pathname"
+operator = "matches"
+value = ".*\\.(html|json|xml|txt)$"
+headers = { "Cache-Control" = "max-age=3600" } 

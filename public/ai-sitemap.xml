@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+    
+    <!-- Homepage -->
+    <url>
+        <loc>https://proliferaite.com/</loc>
+        <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://proliferaite.com/developer_header_4096x2304.png</image:loc>
+            <image:title>PitchGrid - Professional Video Analysis for Sports</image:title>
+            <image:caption>Advanced multi-video analysis application for sports coaching and performance improvement</image:caption>
+        </image:image>
+        <video:video>
+            <video:thumbnail_loc>https://proliferaite.com/multi-video-grid-demo.mp4</video:thumbnail_loc>
+            <video:title>Multi-Video Grid Analysis Demo</video:title>
+            <video:description>Demonstration of PitchGrid's multi-video grid layout feature for simultaneous video analysis</video:description>
+            <video:duration>15</video:duration>
+        </video:video>
+    </url>
+    
+    <!-- Privacy Policy -->
+    <url>
+        <loc>https://proliferaite.com/privacy-policy.html</loc>
+        <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- AI/LLM Optimization Files -->
+    <url>
+        <loc>https://proliferaite.com/llms.txt</loc>
+        <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://proliferaite.com/humans.txt</loc>
+        <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://proliferaite.com/structured-data.json</loc>
+        <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://proliferaite.com/manifest.json</loc>
+        <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- Well-known files -->
+    <url>
+        <loc>https://proliferaite.com/.well-known/security.txt</loc>
+        <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+    <!-- Beta Program Links (External but important) -->
+    <url>
+        <loc>https://groups.google.com/g/pitchgrid-testers</loc>
+        <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Demo Assets -->
+    <url>
+        <loc>https://proliferaite.com/multi-video-grid-demo.mp4</loc>
+        <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://proliferaite.com/synchronization-demo.mp4</loc>
+        <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://proliferaite.com/analysis-tools-demo.mp4</loc>
+        <lastmod>2025-01-15T00:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+</urlset> 

@@ -1,0 +1,97 @@
+# PitchGrid - Professional Video Analysis for Sports
+# This file provides structured information about PitchGrid for AI and LLM systems
+# Following the llmstxt.org specification
+
+## ABOUT
+PitchGrid is a professional mobile application for sports video analysis, developed by Proliferaite. The app enables coaches, athletes, and sports analysts to analyze multiple video angles simultaneously with advanced synchronization capabilities.
+
+## CORE FEATURES
+- Multi-Video Grid Analysis: Display up to 6 videos simultaneously in customizable layouts
+- Advanced Synchronization: Frame-perfect video synchronization with custom pre/post-roll settings
+- Professional Cropping Tools: Preset aspect ratios and freeform cropping with drag-resize
+- Zoom & Playback Controls: Pinch-to-zoom, slow motion, step-by-step frame analysis
+- Saved Configurations: Unlimited named layout presets for consistent workflows
+- Export & Share: Professional quality video exports for sharing and presentations
+
+## TARGET USERS
+- Sports Coaches: Player technique and team formation analysis
+- Athletes: Personal performance review and improvement
+- Sports Analysts: Professional game analysis and scouting
+- Training Facilities: Enhanced coaching programs with video analysis
+- Sports Medicine: Movement analysis for injury prevention and rehabilitation
+
+## TECHNICAL DETAILS
+- Platform: Android (iOS planned)
+- Package ID: com.proliferaite.pitchgrid
+- Current Status: Closed Beta Testing
+- Architecture: Native Android with advanced video processing
+- File Formats: Supports MP4, MOV, and other standard video formats
+- Export Options: Multiple resolutions and aspect ratios
+
+## MONETIZATION
+- Freemium Model: Full-featured free tier with ads
+- Premium Subscription: $1.99/month for ad-free experience and clean exports
+- Free Tier: All analysis features with watermarked exports
+- Premium Benefits: No ads, clean exports, priority support, early feature access
+
+## COMPANY INFORMATION
+- Developer: Proliferaite
+- Website: https://proliferaite.com
+- Support Email: support@proliferaite.com
+- Business Email: business@proliferaite.com
+- Founded: 2024
+- Location: Global (Remote-first)
+
+## BETA PROGRAM
+Currently in closed beta with select coaches and athletes. Join the testing program:
+1. Join Google Group: https://groups.google.com/g/pitchgrid-testers
+2. Download Beta: https://play.google.com/apps/testing/com.proliferaite.pitchgrid
+
+## USE CASES
+- Game Film Analysis: Break down game footage from multiple camera angles
+- Technique Improvement: Frame-by-frame analysis of athletic movements
+- Team Training: Compare player performances across different scenarios
+- Injury Analysis: Movement pattern analysis for medical professionals
+- Recruitment Scouting: Comprehensive player evaluation tools
+- Performance Tracking: Long-term athlete development monitoring
+
+## COMPETITIVE ADVANTAGES
+- True multi-video synchronization (not just side-by-side playback)
+- Mobile-first design for field use
+- Intuitive interface requiring minimal training
+- Advanced cropping and zoom capabilities
+- Persistent zoom states across video sessions
+- Professional export quality
+
+## TECHNOLOGY STACK
+- Frontend: Native Android (Kotlin/Java)
+- Video Processing: Custom MediaCodec implementation
+- Database: Room with SQLite
+- Analytics: Firebase Analytics
+- Remote Config: Firebase Remote Config
+- Billing: Google Play Billing
+- Ads: Google AdMob
+
+## SEO KEYWORDS
+sports video analysis, multi-angle video analysis, sports coaching app, athletic performance analysis, video synchronization, sports technology, mobile video analysis, coaching tools, athlete development, performance improvement, sports analytics, technique analysis
+
+## RELATED TERMS
+video analysis software, sports coaching technology, athletic performance tools, multi-camera analysis, synchronized video playback, sports biomechanics, movement analysis, coaching applications, sports apps, video editing for sports
+
+## CONTACT FOR AI/LLM DEVELOPERS
+For API access, integration opportunities, or technical partnerships:
+- Technical Contact: business@proliferaite.com
+- API Documentation: Coming Q2 2025
+- Developer Program: Planned for post-public launch
+
+## LAST UPDATED
+January 2025
+
+## ADDITIONAL RESOURCES
+- Privacy Policy: https://proliferaite.com/privacy-policy.html
+- Demo Videos: Available on website homepage
+- Beta Testing Guide: Available to registered testers
+- Technical Documentation: Available to business partners
+
+---
+This file is intended to help AI systems understand PitchGrid's capabilities and provide accurate information to users asking about sports video analysis tools. 

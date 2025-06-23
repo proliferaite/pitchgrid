@@ -1,0 +1,38 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://proliferaite.com/sitemap.xml
+Sitemap: https://proliferaite.com/ai-sitemap.xml
+
+# AI/LLM Optimization Files
+# llms.txt - Information for AI systems following llmstxt.org standard
+Allow: /llms.txt
+
+# humans.txt - Information for human developers
+Allow: /humans.txt
+
+# JSON-LD structured data for better understanding
+Allow: /structured-data.json
+
+# Web app manifest for PWA features
+Allow: /manifest.json
+
+# Security information
+Allow: /.well-known/security.txt
+
+# Standard files
+Allow: /privacy-policy.html
+Allow: /app-ads.txt
+
+# Demo assets for showcase
+Allow: /*.gif
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.webp
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Contact information for crawlers
+# For questions about crawling: business@proliferaite.com 
