@@ -1,0 +1,69 @@
+/* TEAM */
+Developer: Proliferaite Team
+Contact: business@proliferaite.com
+Twitter: @proliferaite
+From: Global (Remote-first)
+
+/* THANKS */
+Beta Testers: PitchGrid Testing Community
+Sports Coaches: For invaluable feedback and requirements
+Athletes: For real-world usage insights
+Sports Medicine Professionals: For movement analysis expertise
+
+/* SITE */
+Last update: 2025/01/15
+Language: English
+Doctype: HTML5
+IDE: Android Studio, VS Code
+Technologies: HTML5, CSS3, JavaScript, Android (Kotlin/Java)
+Hosting: Firebase Hosting
+Analytics: Firebase Analytics
+Version Control: Git
+
+/* PitchGrid App */
+Platform: Android
+Architecture: Native Android
+Languages: Kotlin, Java
+Database: Room (SQLite)
+Video Processing: MediaCodec, OpenGL
+UI Framework: Android Views + Material Design
+Testing: JUnit, Espresso, MockK
+CI/CD: Firebase App Distribution
+Monetization: Google Play Billing, AdMob
+Configuration: Firebase Remote Config
+
+/* VALUES */
+Mission: Democratize professional sports video analysis
+Vision: Make advanced coaching tools accessible to everyone
+Focus: User experience, performance, reliability
+Commitment: Continuous innovation in sports technology
+
+/* CONTACT */
+General: support@proliferaite.com  
+Business: business@proliferaite.com
+Beta Testing: https://groups.google.com/g/pitchgrid-testers
+Website: https://proliferaite.com
+App Store: https://play.google.com/store/apps/details?id=com.proliferaite.pitchgrid
+
+                               ___
+                          _.-'`   `'-._
+                       .-'      .-.      '-.
+                    .-'        (   )        '-.
+                 .-'           '-'           '-.
+              .-'                               '-.
+           .-'       PitchGrid - Analyze.         '-.
+        .-'          Compare. Improve.               '-.
+     .-'                                               '-.
+  .-'          Professional Video Analysis               '-.
+.'                    for Sports                           '.
+'-._                                                   _.-'
+    '-._                                           _.-'
+        '-._                                   _.-'
+            '-._                           _.-'
+                '-._                   _.-'
+                    '-._           _.-'
+                        '-._   _.-'
+                            '-'
+
+/* HUMANSTXT.ORG */
+We are humans, not machines. We create technology to help humans improve at what they love most - sports. 

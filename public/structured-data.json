@@ -1,0 +1,175 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://proliferaite.com/#pitchgrid-app",
+      "name": "PitchGrid",
+      "alternateName": "PitchGrid - Professional Video Analysis for Sports",
+      "description": "Professional mobile application for sports video analysis. Enables coaches, athletes, and sports analysts to analyze multiple video angles simultaneously with advanced synchronization capabilities.",
+      "applicationCategory": "Sports & Video Analysis",
+      "operatingSystem": "Android",
+      "softwareVersion": "1.24.0",
+      "datePublished": "2024-01-01",
+      "dateModified": "2025-01-15",
+      "identifier": "com.proliferaite.pitchgrid",
+      "url": "https://proliferaite.com",
+      "downloadUrl": "https://play.google.com/store/apps/details?id=com.proliferaite.pitchgrid",
+      "installUrl": "https://play.google.com/apps/testing/com.proliferaite.pitchgrid",
+      "screenshot": [
+        "https://proliferaite.com/multi-video-grid-demo.mp4",
+        "https://proliferaite.com/synchronization-demo.mp4",
+        "https://proliferaite.com/analysis-tools-demo.mp4"
+      ],
+      "image": "https://proliferaite.com/developer_header_4096x2304.png",
+      "logo": "https://proliferaite.com/developer_icon_512.png",
+      "author": {
+        "@type": "Organization",
+        "@id": "https://proliferaite.com/#organization"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://proliferaite.com/#organization"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "description": "Free tier with ads and watermarked exports"
+        },
+        {
+          "@type": "Offer",
+          "price": "1.99",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "description": "Premium subscription - ad-free with clean exports",
+          "priceSpecification": {
+            "@type": "RecurringCharge",
+            "duration": "P1M",
+            "frequency": "Monthly"
+          }
+        }
+      ],
+      "featureList": [
+        "Multi-Video Grid Analysis",
+        "Advanced Video Synchronization",
+        "Professional Cropping Tools",
+        "Zoom & Playback Controls",
+        "Saved Layout Configurations",
+        "Export & Share Capabilities",
+        "Frame-by-frame Analysis",
+        "Slow Motion Playback",
+        "Pinch-to-zoom"
+      ],
+      "keywords": "sports video analysis, multi-angle analysis, sports coaching, athletic performance, video synchronization, sports technology, coaching tools, technique analysis",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "124",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "audience": {
+        "@type": "Audience",
+        "audienceType": [
+          "Sports Coaches",
+          "Athletes",
+          "Sports Analysts",
+          "Training Facilities",
+          "Sports Medicine Professionals"
+        ]
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://proliferaite.com/#organization",
+      "name": "Proliferaite",
+      "url": "https://proliferaite.com",
+      "logo": "https://proliferaite.com/developer_icon_512.png",
+      "image": "https://proliferaite.com/developer_header_4096x2304.png",
+      "description": "Developer of PitchGrid - professional video analysis tools for sports coaching and performance improvement.",
+      "foundingDate": "2024",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "email": "support@proliferaite.com",
+          "availableLanguage": "English"
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "business inquiries",
+          "email": "business@proliferaite.com",
+          "availableLanguage": "English"
+        }
+      ],
+      "sameAs": [
+        "https://play.google.com/store/apps/dev?id=8234567890123456789",
+        "https://groups.google.com/g/pitchgrid-testers"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://proliferaite.com/#website",
+      "url": "https://proliferaite.com",
+      "name": "PitchGrid - Professional Video Analysis for Sports",
+      "description": "Official website for PitchGrid, a professional video analysis app for sports coaching and performance improvement.",
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://proliferaite.com/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://proliferaite.com/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      },
+      "mainEntity": {
+        "@type": "SoftwareApplication",
+        "@id": "https://proliferaite.com/#pitchgrid-app"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://proliferaite.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is PitchGrid?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PitchGrid is a professional mobile application for sports video analysis that enables coaches, athletes, and sports analysts to analyze multiple video angles simultaneously with advanced synchronization capabilities."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What platforms does PitchGrid support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PitchGrid is currently available for Android devices. iOS support is planned for future releases."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I join the beta program?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To join the PitchGrid beta program: 1) Join our Google Group at https://groups.google.com/g/pitchgrid-testers, then 2) Download the beta app from https://play.google.com/apps/testing/com.proliferaite.pitchgrid"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is PitchGrid free to use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PitchGrid offers a freemium model with a full-featured free tier (with ads and watermarked exports) and a premium subscription at $1.99/month for an ad-free experience with clean exports."
+          }
+        }
+      ]
+    }
+  ]
+} 
