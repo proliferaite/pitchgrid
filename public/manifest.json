@@ -1,7 +1,7 @@
 {
   "name": "PitchGrid - Professional Video Analysis for Sports",
   "short_name": "PitchGrid",
-  "description": "Professional video analysis app for sports coaching and performance improvement. Analyze multiple video angles simultaneously with advanced synchronization tools.",
+  "description": "Turn your smartphone into a professional sports video analysis tool. Analyze multiple phone videos simultaneously with perfect synchronization - no expensive equipment needed.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#667eea",
