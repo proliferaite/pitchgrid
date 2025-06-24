@@ -89,6 +89,32 @@
             opacity: 0.9;
         }
         
+        nav {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+        }
+        
+        nav a:hover {
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+        
         main {
             padding: 3rem 0;
         }
@@ -257,6 +283,17 @@
         </div>
     </header>
 
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/blog.html">Blog</a></li>
+                <li><a href="/use-cases.html">Use Cases</a></li>
+                <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <main>
         <div class="container">
             <section class="section">
@@ -267,7 +304,7 @@
                 <p>Traditional single-camera analysis often misses critical movement details that can only be observed from specific viewing angles. PitchGrid's multi-angle video analysis addresses these limitations by providing comprehensive spatial information about athletic movements. By recording the same action from different positions (using your phone or coordinating with teammates/assistants) and then loading all videos into PitchGrid's synchronized grid, coaches can observe movement patterns that would be impossible to detect from any single viewpoint.</p>
                 
                 <h3>Professional Sports Video Analysis Made Accessible</h3>
-                <p>Previously available only to professional teams with expensive equipment, advanced video analysis capabilities are now accessible to coaches and athletes at all levels. PitchGrid democratizes professional-grade analysis tools, enabling high school coaches, club teams, and individual athletes to access the same sophisticated technology used by elite sports programs worldwide.</p>
+                <p>Transform your smartphone into a powerful video analysis tool. PitchGrid brings professional-grade analysis capabilities to any coach or athlete with a mobile phone, eliminating the need for expensive equipment or specialized software. Whether you're recording at 24fps, 30fps, or higher, PitchGrid helps you extract valuable insights from any quality smartphone footage.</p>
                 
                 <h3>Evidence-Based Performance Improvement</h3>
                 <p>Video analysis has become an indispensable tool in modern sports coaching, transforming how athletes and coaches understand movement, technique, and performance. PitchGrid's systematic approach to video analysis follows established biomechanical principles, ensuring that technical improvements are based on scientific evidence rather than subjective observation alone.</p>
@@ -291,7 +328,7 @@
                                 <source src="/multi-video-grid-demo.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
-                            <p><small>Multiple video angles displayed simultaneously</small></p>
+                            <p><small>Load multiple smartphone videos into synchronized grid analysis</small></p>
                         </div>
                     </div>
                     

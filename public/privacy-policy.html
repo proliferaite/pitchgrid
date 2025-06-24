@@ -28,7 +28,44 @@
             color: white;
             padding: 2rem 0;
             text-align: center;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        nav {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             margin-bottom: 2rem;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+        }
+        
+        nav a:hover {
+            background: #f8f9fa;
+            border-radius: 4px;
         }
         
         .content {
@@ -74,13 +111,23 @@
 <body>
     <header>
         <div class="container">
-            <h1>Privacy Policy</h1>
-            <p>PitchGrid - Advanced Video Analysis for Sports</p>
+            <div class="logo">PitchGrid</div>
+            <div class="tagline">Privacy Policy</div>
         </div>
     </header>
 
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/blog.html">Blog</a></li>
+                <li><a href="/use-cases.html">Use Cases</a></li>
+                <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <div class="container">
-        <a href="/" class="back-link">← Back to Home</a>
         
         <div class="content">
             <div class="last-updated">
