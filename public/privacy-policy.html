@@ -45,32 +45,7 @@
             opacity: 0.9;
         }
         
-        nav {
-            background: white;
-            padding: 1rem 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-        }
-        
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-        
-        nav a {
-            text-decoration: none;
-            color: #667eea;
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-        }
-        
-        nav a:hover {
-            background: #f8f9fa;
-            border-radius: 4px;
-        }
+        /* Navigation styles moved to shared navigation.js */
         
         .content {
             background: white;
@@ -120,17 +95,7 @@
         </div>
     </header>
 
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="/sports-analysis.html">Sports Analysis</a></li>
-                <li><a href="/blog.html">Blog</a></li>
-                <li><a href="/use-cases.html">Use Cases</a></li>
-                <li><a href="/privacy-policy.html">Privacy Policy</a></li>
-            </ul>
-        </div>
-    </nav>
+    <!-- Navigation will be inserted here by JavaScript -->
 
     <div class="container">
         
@@ -247,5 +212,8 @@
             </ul>
         </div>
     </div>
+
+    <!-- Load shared navigation -->
+    <script src="/js/navigation.js"></script>
 </body>
 </html> 
