@@ -12,17 +12,19 @@
     <link rel="shortcut icon" href="/developer_icon_512.png">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="PitchGrid - Advanced Video Analysis for Sports">
-    <meta property="og:description" content="Professional video analysis app for sports coaching and performance improvement. Analyze multiple video angles simultaneously with advanced synchronization tools.">
-    <meta property="og:image" content="https://proliferaite.com/developer_header_4096x2304.png">
-    <meta property="og:url" content="https://proliferaite.com">
+    <meta property="og:title" content="PitchGrid - Professional Video Analysis for Sports">
+    <meta property="og:description" content="Turn your smartphone into a professional sports video analysis tool. Analyze multiple phone videos simultaneously with perfect synchronization - no expensive equipment needed.">
+    <meta property="og:image" content="/developer_header_4096x2304.png">
+    <meta property="og:url" content="">
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="PitchGrid">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="PitchGrid - Advanced Video Analysis for Sports">
-    <meta name="twitter:description" content="Professional video analysis app for sports coaching and performance improvement.">
-    <meta name="twitter:image" content="https://proliferaite.com/developer_header_4096x2304.png">
+    <meta name="twitter:title" content="PitchGrid - Professional Video Analysis for Sports">
+    <meta name="twitter:description" content="Turn your smartphone into a professional sports video analysis tool. Analyze multiple phone videos simultaneously with perfect synchronization - no expensive equipment needed.">
+    <meta name="twitter:image" content="/developer_header_4096x2304.png">
+    <meta name="twitter:url" content="">
     
     <!-- Theme Color -->
     <meta name="theme-color" content="#667eea">
@@ -34,15 +36,29 @@
     <link type="text/plain" rel="author" href="/humans.txt">
     
     <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json" src="/structured-data.json"></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "PitchGrid",
+        "description": "Turn your smartphone into a professional sports video analysis tool. Analyze multiple phone videos simultaneously with perfect synchronization - no expensive equipment needed.",
+        "applicationCategory": "Sports",
+        "operatingSystem": "Android",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
     
     <!-- Additional Meta for AI/LLM Optimization -->
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://proliferaite.com/">
+    <!-- Canonical URL - will be set dynamically -->
+    <link rel="canonical" href="">
     
     <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -475,5 +491,8 @@
 
     <!-- Load shared navigation -->
     <script src="/js/navigation.js"></script>
+    
+    <!-- Fix canonical URLs dynamically -->
+    <script src="/js/canonical-fix.js"></script>
 </body>
 </html> 
