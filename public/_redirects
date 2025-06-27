@@ -1,0 +1,6 @@
+# Redirect www to non-www
+https://www.proliferaite.com/* https://proliferaite.com/:splat 301!
+
+# Redirect HTTP to HTTPS (if not already handled by Cloudflare)
+http://proliferaite.com/* https://proliferaite.com/:splat 301!
+http://www.proliferaite.com/* https://proliferaite.com/:splat 301! 
