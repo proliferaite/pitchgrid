@@ -1,13 +1,13 @@
-// Canonical URL Fix - Dynamically set canonical URLs based on current domain
-// This ensures canonical URLs always match the actual hosting domain
+// Canonical URL Fix - Enforce canonical domain for SEO
+// Always point to the preferred canonical domain
 
 (function() {
-    // Get the current domain and protocol
-    const currentDomain = window.location.origin;
+    // Set your preferred canonical domain (change this to your preference)
+    const canonicalDomain = 'https://proliferaite.com';
     const currentPath = window.location.pathname;
     
-    // Construct the canonical URL based on current location
-    const canonicalUrl = currentDomain + currentPath;
+    // Construct the canonical URL using preferred domain
+    const canonicalUrl = canonicalDomain + currentPath;
     
     // Find existing canonical tag or create one
     let canonicalTag = document.querySelector('link[rel="canonical"]');
