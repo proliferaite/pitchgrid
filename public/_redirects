@@ -1,6 +1,5 @@
-# Redirect www to non-www (simplified syntax)
-https://www.proliferaite.com/* https://proliferaite.com/:splat 301
-
-# HTTP to HTTPS redirects (backup)  
+# HTTP to HTTPS redirects (backup - Cloudflare usually handles this)  
 http://proliferaite.com/* https://proliferaite.com/:splat 301
-http://www.proliferaite.com/* https://proliferaite.com/:splat 301 
+http://www.proliferaite.com/* https://proliferaite.com/:splat 301
+
+# Note: www to non-www redirect handled by Cloudflare Dashboard Rules 
