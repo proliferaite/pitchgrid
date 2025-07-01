@@ -3,50 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PitchGrid - Advanced Video Analysis for Sports</title>
-    <meta name="description" content="PitchGrid is a professional video analysis app for sports coaching and performance improvement. Analyze multiple video angles simultaneously with advanced synchronization tools.">
+    <title>PitchGrid - Sports Video Analysis Made Simple</title>
+    <meta name="description" content="Multi-angle video analysis for sports coaches and athletes. Sync, analyze, and improve performance with frame-perfect precision using just your smartphone.">
     
     <!-- Favicon and App Icons -->
     <link rel="icon" type="image/png" sizes="512x512" href="/developer_icon_512.png">
     <link rel="apple-touch-icon" sizes="512x512" href="/developer_icon_512.png">
     <link rel="shortcut icon" href="/developer_icon_512.png">
     
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://proliferaite.com/">
+    
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="PitchGrid - Advanced Video Analysis for Sports">
-    <meta property="og:description" content="Professional video analysis app for sports coaching and performance improvement. Analyze multiple video angles simultaneously with advanced synchronization tools.">
+    <meta property="og:title" content="PitchGrid - Sports Video Analysis Made Simple">
+    <meta property="og:description" content="Multi-angle video analysis for sports coaches and athletes. Sync, analyze, and improve performance with frame-perfect precision using just your smartphone.">
     <meta property="og:image" content="https://proliferaite.com/developer_header_4096x2304.png">
-    <meta property="og:url" content="https://proliferaite.com">
+    <meta property="og:url" content="https://proliferaite.com/">
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="PitchGrid">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="PitchGrid - Advanced Video Analysis for Sports">
-    <meta name="twitter:description" content="Professional video analysis app for sports coaching and performance improvement.">
+    <meta name="twitter:title" content="PitchGrid - Sports Video Analysis Made Simple">
+    <meta name="twitter:description" content="Multi-angle video analysis for sports coaches and athletes. Sync, analyze, and improve performance with frame-perfect precision using just your smartphone.">
     <meta name="twitter:image" content="https://proliferaite.com/developer_header_4096x2304.png">
     
     <!-- Theme Color -->
-    <meta name="theme-color" content="#667eea">
+    <meta name="theme-color" content="#1a73e8">
     
     <!-- Web App Manifest -->
     <link rel="manifest" href="/manifest.json">
     
-    <!-- Humans.txt -->
-    <link type="text/plain" rel="author" href="/humans.txt">
-    
     <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json" src="/structured-data.json"></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "PitchGrid",
+        "description": "Multi-angle video analysis for sports coaches and athletes. Sync, analyze, and improve performance with frame-perfect precision using just your smartphone.",
+        "applicationCategory": "Sports",
+        "operatingSystem": "Android",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
     
-    <!-- Additional Meta for AI/LLM Optimization -->
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://proliferaite.com/">
-    
-    <!-- Preconnect for Performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://www.google-analytics.com">
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6742499397054869" crossorigin="anonymous"></script>
     
     <style>
         * {
@@ -56,343 +62,454 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: #f8f9fa;
+            background: #fff;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
         
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a73e8 0%, #4285f4 100%);
             color: white;
-            padding: 2rem 0;
+            padding: 80px 0 100px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
         
-        .logo {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            pointer-events: none;
         }
         
-        .tagline {
-            font-size: 1.2rem;
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+        
+        .hero-tagline {
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+            margin-bottom: 16px;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1rem, 1.8vw, 1.2rem);
+            margin-bottom: 48px;
             opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
-        main {
-            padding: 3rem 0;
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
         }
         
-        .section {
-            background: white;
-            margin: 2rem 0;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        h2 {
-            color: #667eea;
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-        }
-        
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-        
-        .feature {
-            padding: 1.5rem;
-            background: #f8f9fa;
+        .btn-primary {
+            background: #fff;
+            color: #1a73e8;
+            padding: 16px 32px;
+            border: none;
             border-radius: 8px;
-            border-left: 4px solid #667eea;
-        }
-        
-        .feature h3 {
-            color: #333;
-            margin-bottom: 0.5rem;
-        }
-        
-        .contact-info {
-            background: #667eea;
-            color: white;
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-        }
-        
-        .contact-info h2 {
-            color: white;
-        }
-        
-        .btn {
-            display: inline-block;
-            background: #764ba2;
-            color: white;
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 6px;
-            margin: 10px;
-            transition: background 0.3s;
-        }
-        
-        .btn:hover {
-            background: #5a3a7a;
-        }
-        
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-        }
-        
-        .app-badges {
-            margin: 2rem 0;
-        }
-        
-        .badge {
-            display: inline-block;
-            margin: 0 10px;
-            padding: 10px 20px;
-            background: #333;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-        }
-        
-        /* Beta Testing Styles */
-        .beta-notice {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-align: center;
-        }
-        
-        .beta-notice h2 {
-            color: white;
-        }
-        
-        .beta-btn {
-            background: #28a745;
             font-size: 1.1rem;
-            font-weight: bold;
-            padding: 15px 30px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
         
-        .beta-btn:hover {
-            background: #218838;
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
         }
         
-        /* Showcase Grid Styles */
-        .showcase-grid {
+        .btn-secondary {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            padding: 16px 32px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.2);
+            border-color: rgba(255,255,255,0.5);
+            transform: translateY(-2px);
+        }
+        
+        /* Demo Section */
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+        
+        .demo-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .demo-card:hover {
+            transform: translateY(-4px);
+        }
+        
+        .demo-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 16px;
+            color: white;
+        }
+        
+        .demo-video {
+            width: 100%;
+            height: 200px;
+            border-radius: 12px;
+            object-fit: contain;
+            background: rgba(0,0,0,0.1);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+        
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 24px;
+            color: #1a73e8;
+        }
+        
+        .features-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
+            gap: 40px;
         }
         
-        .showcase-item {
+        .feature-card {
+            background: white;
+            padding: 32px;
+            border-radius: 16px;
             text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
         }
         
-        .showcase-item h3 {
-            margin-bottom: 1rem;
-            color: #667eea;
+        .feature-card:hover {
+            transform: translateY(-8px);
         }
         
-        .gif-container {
-            background: #f8f9fa;
-            border-radius: 8px;
-            padding: 1rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
         }
         
-        .gif-container img,
-        .gif-container video {
-            width: 100%;
-            height: auto;
-            border-radius: 6px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 16px;
+            color: #1a73e8;
         }
         
-        .gif-container p {
-            margin-top: 1rem;
-            text-align: center;
-        }
-        
-        .gif-container small {
+        .feature-card p {
             color: #666;
-            font-style: italic;
+            line-height: 1.6;
         }
         
+        /* Beta Section */
+        .beta-section {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .beta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 24px;
+        }
+        
+        .beta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+        
+        .beta-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .beta-step {
+            background: rgba(255,255,255,0.1);
+            padding: 24px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .beta-step h3 {
+            margin-bottom: 16px;
+            font-size: 1.3rem;
+        }
+        
+        .beta-step .btn-primary {
+            margin-top: 16px;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        footer p {
+            margin-bottom: 8px;
+            opacity: 0.8;
+        }
+        
+        /* Responsive */
         @media (max-width: 768px) {
-            .features {
+            .hero {
+                padding: 60px 0 80px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .demo-grid {
                 grid-template-columns: 1fr;
             }
             
-            .logo {
-                font-size: 2rem;
+            .features {
+                padding: 60px 0;
+            }
+            
+            .beta-section {
+                padding: 60px 0;
             }
         }
     </style>
 </head>
 <body>
-    <header>
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="container">
-            <div class="logo">PitchGrid</div>
-            <div class="tagline">Spot Differences, Measure Improvements</div>
+            <div class="hero-content">
+                <h1>PitchGrid</h1>
+                <div class="hero-tagline">Sports Video Analysis Made Simple</div>
+                <div class="hero-subtitle">
+                    Advanced video analysis for coaches, athletes, and parents.<br>
+                    Sync multiple videos and angles, analyze frame-by-frame, improve instantly using your existing phones.
+                </div>
+                
+                <div class="cta-buttons">
+                    <a href="#beta" class="btn-primary">
+                        Join Beta Program
+                    </a>
+                    <a href="#demo" class="btn-secondary">
+                        See It In Action
+                    </a>
+                </div>
+                
+                                 <div class="demo-grid" id="demo">
+                     <div class="demo-card">
+                         <h3>Perfect Sync</h3>
+                         <video class="demo-video" autoplay loop muted playsinline>
+                             <source src="/multi-video-grid-demo.mp4" type="video/mp4">
+                         </video>
+                     </div>
+                     
+                     <div class="demo-card">
+                         <h3>Multi-Angle Grid</h3>
+                         <video class="demo-video" autoplay loop muted playsinline>
+                             <source src="/synchronization-demo.mp4" type="video/mp4">
+                         </video>
+                     </div>
+                    
+                    <div class="demo-card">
+                        <h3>Pro Tools</h3>
+                        <video class="demo-video" autoplay loop muted playsinline>
+                            <source src="/analysis-tools-demo.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
         </div>
-    </header>
+    </section>
 
-    <main>
+    <!-- Features Section -->
+    <section class="features">
         <div class="container">
-            <section class="section">
-                <h2>About PitchGrid</h2>
-                <p>PitchGrid is a cutting-edge mobile application designed for sports coaches, athletes, and analysts who need professional-grade video analysis tools. Our app enables users to analyze multiple video angles simultaneously with advanced synchronization capabilities, making it easier than ever to break down performance and improve technique.</p>
-            </section>
-
-            <!-- App Showcase Section -->
-            <section class="section">
-                <h2>See PitchGrid in Action</h2>
-                <p>Experience the power of multi-angle video analysis with these key features:</p>
+            <h2>Everything You Need</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎥</div>
+                    <h3>Multi-Video Sync</h3>
+                    <p>Display up to 6 videos simultaneously with frame-perfect synchronization across all angles.</p>
+                </div>
                 
-                <div class="showcase-grid">
-                    <div class="showcase-item">
-                        <h3>Multi-Video Grid Layout</h3>
-                        <div class="gif-container">
-                            <video autoplay loop muted playsinline loading="lazy">
-                                <source src="/multi-video-grid-demo.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                            <p><small>Multiple video angles displayed simultaneously</small></p>
-                        </div>
-                    </div>
-                    
-                    <div class="showcase-item">
-                        <h3>Advanced Synchronization</h3>
-                        <div class="gif-container">
-                            <video autoplay loop muted playsinline loading="lazy">
-                                <source src="/synchronization-demo.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                            <p><small>Frame-perfect video synchronization</small></p>
-                        </div>
-                    </div>
-                    
-                    <div class="showcase-item">
-                        <h3>Professional Analysis Tools</h3>
-                        <div class="gif-container">
-                            <video autoplay loop muted playsinline loading="lazy">
-                                <source src="/analysis-tools-demo.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                            <p><small>Zoom, crop, and precise playback controls</small></p>
-                        </div>
-                    </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Instant Analysis</h3>
+                    <p>Zoom, crop, and analyze in real-time with advanced playback controls.</p>
                 </div>
-            </section>
-
-            <!-- Closed Beta Notice -->
-            <section class="section beta-notice">
-                <h2>🚀 Join Our Closed Beta Program</h2>
-                <p><strong>PitchGrid is currently in closed beta testing!</strong> We're working with select coaches and athletes to perfect the app before the public release.</p>
                 
-                <div style="text-align: center; margin: 2rem 0;">
-                    <h3 style="color: white; margin-bottom: 1.5rem; font-size: 1.1rem;">Quick 2-Step Process:</h3>
-                    
-                    <div style="display: flex; flex-direction: column; gap: 1rem; max-width: 500px; margin: 0 auto;">
-                        <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid #28a745;">
-                            <p style="margin: 0 0 0.5rem 0; font-weight: bold; color: #fff;">Step 1: Join Testing Group</p>
-                            <a href="https://groups.google.com/g/pitchgrid-testers" target="_blank" class="btn" style="background: #28a745; margin: 0.5rem 0;">Join Google Group</a>
-                            <p style="font-size: 0.8rem; color: #ddd; margin: 0.5rem 0 0 0;">This gives you access to the beta program</p>
-                        </div>
-                        
-                        <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px; border-left: 4px solid #007bff;">
-                            <p style="margin: 0 0 0.5rem 0; font-weight: bold; color: #fff;">Step 2: Download Beta App</p>
-                            <a href="https://play.google.com/apps/testing/com.proliferaite.pitchgrid" target="_blank" class="btn" style="background: #007bff; margin: 0.5rem 0;">Get Beta App</a>
-                            <p style="font-size: 0.8rem; color: #ddd; margin: 0.5rem 0 0 0;">Download after joining the group above</p>
-                        </div>
-                    </div>
-                    
-                    <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #ddd;">
-                        Complete both steps to start testing • Provide feedback • Help shape PitchGrid's future
-                    </p>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile First</h3>
+                    <p>Turn any smartphone into a powerful video analysis workstation. No expensive equipment needed.</p>
                 </div>
-            </section>
-
-            <section class="section">
-                <h2>Key Features</h2>
-                <div class="features">
-                    <div class="feature">
-                        <h3>🎥 Multi-Video Grid Analysis</h3>
-                        <p>Display up to 6 videos simultaneously in customizable grid layouts for comprehensive analysis of different angles and perspectives.</p>
-                    </div>
-                    <div class="feature">
-                        <h3>⚡ Advanced Synchronization</h3>
-                        <p>Precise video synchronization with custom pre-roll and post-roll settings, plus fixed-point sync for frame-perfect analysis.</p>
-                    </div>
-                    <div class="feature">
-                        <h3>✂️ Professional Cropping Tools</h3>
-                        <p>Preset aspect ratios and freeform cropping with drag-and-resize functionality for focused analysis of specific areas.</p>
-                    </div>
-                    <div class="feature">
-                        <h3>🔍 Zoom & Playback Controls</h3>
-                        <p>Pinch-to-zoom with persistent zoom states, slow motion playback, step-by-step frame analysis, and looping controls.</p>
-                    </div>
-                    <div class="feature">
-                        <h3>💾 Saved Configurations</h3>
-                        <p>Save and recall unlimited named layout presets for consistent analysis workflows across different sessions.</p>
-                    </div>
-                    <div class="feature">
-                        <h3>📤 Export & Share</h3>
-                        <p>Export analyzed videos with professional quality for sharing with athletes, teams, or for presentation purposes.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2>Who Uses PitchGrid</h2>
-                <p>PitchGrid is trusted by:</p>
-                <ul style="margin: 1rem 0; padding-left: 2rem;">
-                    <li><strong>Sports Coaches</strong> - Analyze player technique and team formations</li>
-                    <li><strong>Athletes</strong> - Review and improve personal performance</li>
-                    <li><strong>Sports Analysts</strong> - Professional game analysis and scouting</li>
-                    <li><strong>Training Facilities</strong> - Enhance coaching programs with video analysis</li>
-                    <li><strong>Sports Medicine</strong> - Movement analysis for injury prevention and rehabilitation</li>
-                </ul>
-            </section>
-
-            <section class="contact-info">
-                <h2>Developer Information</h2>
-                <p><strong>Company:</strong> Proliferaite</p>
-                <p><strong>App:</strong> PitchGrid</p>
-                <p><strong>Package ID:</strong> com.proliferaite.pitchgrid</p>
-                <p><strong>Support Email:</strong> support@proliferaite.com</p>
-                <p><strong>Business Inquiries:</strong> business@proliferaite.com</p>
                 
-                <div style="margin-top: 2rem;">
-                    <a href="mailto:support@proliferaite.com" class="btn">Contact Support</a>
-                    <a href="/privacy-policy.html" class="btn">Privacy Policy</a>
+                <div class="feature-card">
+                    <div class="feature-icon">💾</div>
+                    <h3>Save & Share</h3>
+                    <p>Export analyzed videos and save custom layouts for consistent analysis workflows.</p>
                 </div>
-            </section>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Frame-Perfect</h3>
+                    <p>Step through footage frame-by-frame to catch every detail that matters for performance.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Customizable</h3>
+                    <p>Flexible grid layouts, custom sync points, and preset configurations for any sport.</p>
+                </div>
+            </div>
         </div>
-    </main>
+    </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Proliferaite. All rights reserved.</p>
-            <p>PitchGrid - Professional Video Analysis for Sports</p>
+         <!-- Beta Section -->
+     <section class="beta-section" id="beta">
+         <div class="container">
+            <h2>🚀 Join the Beta</h2>
+            <p>Get early access to PitchGrid and help shape the future of sports video analysis.</p>
+            
+            <div class="beta-steps">
+                <div class="beta-step">
+                    <h3>1. Join Testing Group</h3>
+                    <p>Get access to the beta program</p>
+                    <a href="https://groups.google.com/g/pitchgrid-testers" target="_blank" class="btn-primary">
+                        Join Google Group
+                    </a>
+                </div>
+                
+                <div class="beta-step">
+                    <h3>2. Download App</h3>
+                    <p>Install the beta version</p>
+                    <a href="https://play.google.com/apps/testing/com.proliferaite.pitchgrid" target="_blank" class="btn-primary">
+                        Get Beta App
+                    </a>
+                </div>
+            </div>
         </div>
+         </section>
+
+     <!-- Resources Section -->
+     <section style="padding: 60px 0; background: #f8f9fa;">
+         <div class="container">
+             <h2 style="text-align: center; margin-bottom: 40px; color: #1a73e8;">Resources & Community</h2>
+             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+                 <div style="background: white; padding: 24px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                     <h3 style="margin-bottom: 16px; color: #333;">📚 Learn & Improve</h3>
+                     <ul style="list-style: none; padding: 0;">
+                         <li style="margin-bottom: 8px;"><a href="/blog.html" style="color: #1a73e8; text-decoration: none;">Sports Analysis Blog</a></li>
+                         <li style="margin-bottom: 8px;"><a href="/sports-analysis.html" style="color: #1a73e8; text-decoration: none;">Video Analysis Guide</a></li>
+                     </ul>
+                 </div>
+                 <div style="background: white; padding: 24px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                     <h3 style="margin-bottom: 16px; color: #333;">⚽ Sport-Specific</h3>
+                     <ul style="list-style: none; padding: 0;">
+                         <li style="margin-bottom: 8px;"><a href="/baseball-analysis.html" style="color: #1a73e8; text-decoration: none;">Baseball Analysis</a></li>
+                         <li style="margin-bottom: 8px;"><a href="/basketball-analysis.html" style="color: #1a73e8; text-decoration: none;">Basketball Analysis</a></li>
+                         <li style="margin-bottom: 8px;"><a href="/football-analysis.html" style="color: #1a73e8; text-decoration: none;">Football Analysis</a></li>
+                         <li style="margin-bottom: 8px;"><a href="/soccer-analysis.html" style="color: #1a73e8; text-decoration: none;">Soccer Analysis</a></li>
+                         <li style="margin-bottom: 8px;"><a href="/softball-analysis.html" style="color: #1a73e8; text-decoration: none;">Softball Analysis</a></li>
+                     </ul>
+                 </div>
+                 <div style="background: white; padding: 24px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+                     <h3 style="margin-bottom: 16px; color: #333;">🚀 Creative Uses</h3>
+                     <ul style="list-style: none; padding: 0;">
+                         <li style="margin-bottom: 8px;"><a href="/use-cases.html" style="color: #1a73e8; text-decoration: none;">Beyond Sports</a></li>
+                     </ul>
+                 </div>
+             </div>
+         </div>
+     </section>
+
+     <!-- Footer -->
+     <footer>
+                 <div class="container">
+             <p>&copy; 2025 Proliferaite. All rights reserved.</p>
+             <p>PitchGrid - Sports Video Analysis Made Simple</p>
+             <p><a href="/privacy-policy.html" style="color: #4285f4;">Privacy Policy</a> | <a href="mailto:support@proliferaite.com" style="color: #4285f4;">Support</a></p>
+         </div>
     </footer>
+
+
 </body>
 </html> 

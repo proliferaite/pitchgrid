@@ -5,8 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - PitchGrid</title>
     
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="512x512" href="/developer_icon_512.png">
+    <link rel="shortcut icon" href="/developer_icon_512.png">
+    
     <!-- Canonical URL -->
     <link rel="canonical" href="https://proliferaite.com/privacy-policy.html">
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6742499397054869" crossorigin="anonymous"></script>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -28,8 +35,20 @@
             color: white;
             padding: 2rem 0;
             text-align: center;
-            margin-bottom: 2rem;
         }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* Navigation styles moved to shared navigation.js */
         
         .content {
             background: white;
@@ -74,13 +93,14 @@
 <body>
     <header>
         <div class="container">
-            <h1>Privacy Policy</h1>
-            <p>PitchGrid - Advanced Video Analysis for Sports</p>
+            <div class="logo">PitchGrid</div>
+            <div class="tagline">Privacy Policy</div>
         </div>
     </header>
 
+    <!-- Navigation will be inserted here by JavaScript -->
+
     <div class="container">
-        <a href="/" class="back-link">← Back to Home</a>
         
         <div class="content">
             <div class="last-updated">
@@ -195,5 +215,10 @@
             </ul>
         </div>
     </div>
+
+    <!-- Load shared navigation -->
+    <script src="/js/navigation.js"></script>
+    
+
 </body>
 </html> 
