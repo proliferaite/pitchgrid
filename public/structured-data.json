@@ -37,14 +37,14 @@
           "price": "0",
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock",
-          "description": "Free tier with ads and watermarked exports"
+          "description": "Free tier with ads and watermarked exports (PENDING)"
         },
         {
           "@type": "Offer",
           "price": "1.99",
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock",
-          "description": "Premium subscription - ad-free with clean exports",
+          "description": "Premium subscription - ad-free with clean exports (PENDING)",
           "priceSpecification": {
             "@type": "RecurringCharge",
             "duration": "P1M",
@@ -166,7 +166,7 @@
           "name": "Is PitchGrid free to use?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "PitchGrid offers a freemium model with a full-featured free tier (with ads and watermarked exports) and a premium subscription at $1.99/month for an ad-free experience with clean exports."
+            "text": "PitchGrid offers a freemium model with a full-featured free tier (with ads and watermarked exports - PENDING) and a premium subscription at $1.99/month for an ad-free experience with clean exports (PENDING)."
           }
         }
       ]
