@@ -41,9 +41,9 @@ Commitment: Continuous innovation in sports technology
 /* CONTACT */
 General: support@proliferaite.com  
 Business: business@proliferaite.com
-Beta Testing: https://groups.google.com/g/pitchgrid-testers
+Download: https://play.google.com/store/apps/details?id=com.proliferaite.pitchgrid
 Website: https://proliferaite.com
-App Store: https://play.google.com/store/apps/details?id=com.proliferaite.pitchgrid
+Feedback: https://proliferaite.com/feedback.html
 
                                ___
                           _.-'`   `'-._

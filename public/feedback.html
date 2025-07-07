@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback & Support - PitchGrid</title>
+    <meta name="description" content="Share your creative use cases, report bugs, or request features for PitchGrid. Help us improve the best sports video analysis app.">
+    
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/png" sizes="512x512" href="/developer_icon_512.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="/developer_icon_512.png">
+    <link rel="shortcut icon" href="/developer_icon_512.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://pitchgrid.proliferaite.com/feedback">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Feedback & Support - PitchGrid">
+    <meta property="og:description" content="Share your creative use cases, report bugs, or request features for PitchGrid. Help us improve the best sports video analysis app.">
+    <meta property="og:image" content="https://pitchgrid.proliferaite.com/developer_header_4096x2304.png">
+    <meta property="og:url" content="https://pitchgrid.proliferaite.com/feedback.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="PitchGrid">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Feedback & Support - PitchGrid">
+    <meta name="twitter:description" content="Share your creative use cases, report bugs, or request features for PitchGrid. Help us improve the best sports video analysis app.">
+    <meta name="twitter:image" content="https://pitchgrid.proliferaite.com/developer_header_4096x2304.png">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#1a73e8">
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6742499397054869" crossorigin="anonymous"></script>
+    
+    <!-- TrustBox script -->
+    <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+    <!-- End TrustBox script -->
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1a73e8 0%, #4285f4 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+        
+        .header p {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            margin-bottom: 32px;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .breadcrumb {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 16px;
+        }
+        
+        .breadcrumb a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+        }
+        
+        .breadcrumb a:hover {
+            opacity: 1;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 60px 0;
+        }
+        
+        .feedback-intro {
+            background: white;
+            border-radius: 16px;
+            padding: 48px;
+            margin-bottom: 48px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        
+        .feedback-intro h2 {
+            font-size: 2rem;
+            margin-bottom: 24px;
+            color: #1a73e8;
+        }
+        
+        .feedback-intro p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Feedback Grid */
+        .feedback-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-bottom: 48px;
+        }
+        
+        .feedback-card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+        
+        .feedback-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+        }
+        
+        .feedback-card-icon {
+            font-size: 3rem;
+            margin-bottom: 24px;
+            display: block;
+        }
+        
+        .feedback-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            color: #333;
+        }
+        
+        .feedback-card p {
+            color: #666;
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: #28a745;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #218838;
+            transform: translateY(-2px);
+        }
+        
+        .btn-danger {
+            background: #dc3545;
+            color: white;
+        }
+        
+        .btn-danger:hover {
+            background: #c82333;
+            transform: translateY(-2px);
+        }
+        
+        .btn-info {
+            background: #007bff;
+            color: white;
+        }
+        
+        .btn-info:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+        }
+        
+        /* Guidelines Section */
+        .guidelines {
+            background: white;
+            border-radius: 16px;
+            padding: 48px;
+            margin-bottom: 48px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .guidelines h2 {
+            font-size: 2rem;
+            margin-bottom: 24px;
+            color: #1a73e8;
+            text-align: center;
+        }
+        
+        .guidelines ul {
+            max-width: 800px;
+            margin: 0 auto;
+            padding-left: 24px;
+        }
+        
+        .guidelines li {
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .guidelines li strong {
+            color: #1a73e8;
+        }
+        
+        .note {
+            background: #e3f2fd;
+            border-left: 4px solid #1a73e8;
+            padding: 24px;
+            margin-top: 32px;
+            border-radius: 8px;
+        }
+        
+        .note p {
+            margin: 0;
+            font-size: 1rem;
+            color: #333;
+        }
+        
+        /* Community Section */
+        .community-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 48px;
+            margin-bottom: 48px;
+            text-align: center;
+        }
+        
+        .community-section h2 {
+            font-size: 2rem;
+            margin-bottom: 24px;
+            color: white;
+        }
+        
+        .community-section p {
+            font-size: 1.1rem;
+            margin-bottom: 32px;
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .community-links {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .community-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .community-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+        
+        /* Navigation */
+        .nav-links {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        
+        .nav-links a {
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 0 16px;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #4285f4;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        footer p {
+            margin-bottom: 8px;
+            opacity: 0.8;
+        }
+        
+        footer a {
+            color: #4285f4;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                padding: 40px 0;
+            }
+            
+            .feedback-intro,
+            .guidelines,
+            .community-section {
+                padding: 32px 24px;
+            }
+            
+            .feedback-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            
+            .feedback-card {
+                padding: 24px;
+            }
+            
+            .community-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-links a {
+                display: block;
+                margin: 8px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="breadcrumb">
+                    <a href="/index.html">Home</a> / Feedback & Support
+                </div>
+                <h1>💡 Feedback & Support</h1>
+                <p>Help us improve PitchGrid by sharing your ideas, reporting issues, or showcasing your creative use cases.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Intro Section -->
+            <section class="feedback-intro">
+                <h2>We Value Your Input</h2>
+                <p>Your feedback drives PitchGrid's development. Whether you've discovered a creative use case, found a bug, or have ideas for new features, we want to hear from you. Your contributions help make PitchGrid better for everyone.</p>
+            </section>
+
+            <!-- Feedback Options -->
+            <section class="feedback-grid">
+                <div class="feedback-card">
+                    <span class="feedback-card-icon">🎯</span>
+                    <h3>Share Your Creative Use Case</h3>
+                    <p>Discovered an innovative way to use PitchGrid? Share your creative application and help inspire others in the community.</p>
+                    <a href="https://github.com/proliferaite/pitchgrid/issues/new?template=use-case-submission.md&title=Creative%20Use%20Case:%20&labels=use-case,community-submission" 
+                       target="_blank" 
+                       class="btn btn-primary">
+                        Submit Use Case
+                    </a>
+                </div>
+                
+                <div class="feedback-card">
+                    <span class="feedback-card-icon">🐛</span>
+                    <h3>Report a Bug</h3>
+                    <p>Found something that's not working correctly? Help us fix it by providing detailed information about the issue.</p>
+                    <a href="https://github.com/proliferaite/pitchgrid/issues/new?template=bug_report.md&title=Bug%20Report:%20&labels=bug" 
+                       target="_blank"
+                       class="btn btn-danger">
+                        Report Bug
+                    </a>
+                </div>
+                
+                <div class="feedback-card">
+                    <span class="feedback-card-icon">💭</span>
+                    <h3>Request a Feature</h3>
+                    <p>Have an idea for a new feature or improvement? Share your suggestions with our development team.</p>
+                    <a href="https://github.com/proliferaite/pitchgrid/issues/new?template=feature_request.md&title=Feature%20Request:%20&labels=enhancement" 
+                       target="_blank"
+                       class="btn btn-info">
+                        Request Feature
+                    </a>
+                </div>
+            </section>
+
+            <!-- Ad Unit -->
+            <div style="text-align: center; margin: 3rem 0; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-6742499397054869"
+                     data-ad-slot="3052820503"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+
+            <!-- Guidelines -->
+            <section class="guidelines">
+                <h2>🌟 Submission Guidelines</h2>
+                <ul>
+                    <li><strong>Detailed Description:</strong> Explain your use case, bug, or feature request clearly and comprehensively</li>
+                    <li><strong>Visual Examples:</strong> Include screenshots, videos, or links to demonstrate your point</li>
+                    <li><strong>Step-by-Step Process:</strong> For use cases, explain how you set up your analysis</li>
+                    <li><strong>Results & Insights:</strong> Share what you discovered or achieved</li>
+                    <li><strong>Reproducible Steps:</strong> For bugs, provide clear steps to reproduce the issue</li>
+                    <li><strong>Device Information:</strong> Include your device model, Android version, and app version</li>
+                    <li><strong>Tips for Others:</strong> Share advice for others trying similar applications</li>
+                </ul>
+                
+                <div class="note">
+                    <p><strong>Note:</strong> All submissions are reviewed before being featured or addressed. For use cases, we'll contact you if we'd like to showcase your application on our website. For bugs and feature requests, we'll prioritize based on impact and feasibility.</p>
+                </div>
+            </section>
+
+            <!-- Community Section -->
+            <section class="community-section">
+                <h2>Join Our Community</h2>
+                <p>Connect with other PitchGrid users, share tips, and get help from the community. Download PitchGrid from the Google Play Store to get started.</p>
+                <div class="community-links">
+                    <a href="https://play.google.com/store/apps/details?id=com.proliferaite.pitchgrid" target="_blank" class="community-btn">
+                        Download PitchGrid
+                    </a>
+                    <a href="mailto:support@proliferaite.com" class="community-btn">
+                        Email Support
+                    </a>
+                </div>
+            </section>
+
+            <!-- Trustpilot Review Section -->
+            <section style="background: white; border-radius: 16px; padding: 48px; margin-bottom: 48px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); text-align: center;">
+                <h2 style="font-size: 2rem; margin-bottom: 24px; color: #1a73e8;">⭐ Share Your Experience</h2>
+                <p style="font-size: 1.1rem; color: #666; margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Help other users discover PitchGrid by sharing your experience on Trustpilot. Your honest feedback helps us improve and helps others make informed decisions.
+                </p>
+                
+                <!-- TrustBox widget - Review Collector -->
+                <div class="trustpilot-widget" data-locale="en-US" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="686736c5366d801e3d9c35db" data-style-height="52px" data-style-width="100%" style="max-width: 600px; margin: 0 auto;">
+                    <a href="https://www.trustpilot.com/review/proliferaite.com" target="_blank" rel="noopener" style="color: #1a73e8; text-decoration: none; font-weight: 600;">Review PitchGrid on Trustpilot</a>
+                </div>
+                <!-- End TrustBox widget -->
+            </section>
+
+            <!-- Navigation -->
+            <section class="nav-links">
+                <a href="/index.html">← Back to Home</a>
+                <a href="/use-cases.html">Creative Use Cases</a>
+                <a href="/sports-analysis.html">Sports Analysis Guide</a>
+                <a href="/blog.html">Blog</a>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Proliferaite. All rights reserved.</p>
+            <p>PitchGrid - Sports Video Analysis Made Simple</p>
+            <p><a href="/privacy-policy.html">Privacy Policy</a> | <a href="mailto:support@proliferaite.com">Support</a></p>
+        </div>
+    </footer>
+
+    <!-- Load shared navigation -->
+    <script src="/js/navigation.js"></script>
+    
+    <!-- Load shared footer -->
+    <script src="/js/footer.js"></script>
+
+</body>
+</html> 

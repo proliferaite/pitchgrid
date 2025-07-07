@@ -15,7 +15,7 @@
       "identifier": "com.proliferaite.pitchgrid",
       "url": "https://proliferaite.com",
       "downloadUrl": "https://play.google.com/store/apps/details?id=com.proliferaite.pitchgrid",
-      "installUrl": "https://play.google.com/apps/testing/com.proliferaite.pitchgrid",
+      "installUrl": "https://play.google.com/store/apps/details?id=com.proliferaite.pitchgrid",
       "screenshot": [
         "https://proliferaite.com/multi-video-grid-demo.mp4",
         "https://proliferaite.com/synchronization-demo.mp4",
@@ -37,14 +37,14 @@
           "price": "0",
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock",
-          "description": "Free tier with ads and watermarked exports"
+          "description": "Free tier with ads and watermarked exports (PENDING)"
         },
         {
           "@type": "Offer",
           "price": "1.99",
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock",
-          "description": "Premium subscription - ad-free with clean exports",
+          "description": "Premium subscription - ad-free with clean exports (PENDING)",
           "priceSpecification": {
             "@type": "RecurringCharge",
             "duration": "P1M",
@@ -155,10 +155,10 @@
         },
         {
           "@type": "Question",
-          "name": "How can I join the beta program?",
+          "name": "How can I download PitchGrid?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "To join the PitchGrid beta program: 1) Join our Google Group at https://groups.google.com/g/pitchgrid-testers, then 2) Download the beta app from https://play.google.com/apps/testing/com.proliferaite.pitchgrid"
+            "text": "PitchGrid is now available in open testing! You can download it directly from the Google Play Store at https://play.google.com/store/apps/details?id=com.proliferaite.pitchgrid"
           }
         },
         {
@@ -166,7 +166,7 @@
           "name": "Is PitchGrid free to use?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "PitchGrid offers a freemium model with a full-featured free tier (with ads and watermarked exports) and a premium subscription at $1.99/month for an ad-free experience with clean exports."
+            "text": "PitchGrid offers a freemium model with a full-featured free tier (with ads and watermarked exports - PENDING) and a premium subscription at $1.99/month for an ad-free experience with clean exports (PENDING)."
           }
         }
       ]

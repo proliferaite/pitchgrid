@@ -82,10 +82,10 @@
   "prefer_related_applications": true,
   "shortcuts": [
     {
-      "name": "Download Beta",
-      "short_name": "Beta",
-      "description": "Download PitchGrid beta from Google Play",
-      "url": "https://play.google.com/apps/testing/com.proliferaite.pitchgrid",
+      "name": "Download PitchGrid",
+      "short_name": "Download",
+      "description": "Download PitchGrid from Google Play Store",
+      "url": "https://play.google.com/store/apps/details?id=com.proliferaite.pitchgrid",
       "icons": [
         {
           "src": "/developer_icon_512.png",
@@ -95,10 +95,10 @@
       ]
     },
     {
-      "name": "Join Testing",
-      "short_name": "Testing",
-      "description": "Join the PitchGrid testing community",
-      "url": "https://groups.google.com/g/pitchgrid-testers",
+      "name": "Share Feedback",
+      "short_name": "Feedback",
+      "description": "Share your PitchGrid experience and suggestions",
+      "url": "https://proliferaite.com/feedback.html",
       "icons": [
         {
           "src": "/developer_icon_512.png",

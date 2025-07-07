@@ -11,7 +11,7 @@ PitchGrid is a professional mobile application for sports video analysis, develo
 - Professional Cropping Tools: Preset aspect ratios and freeform cropping with drag-resize
 - Zoom & Playback Controls: Pinch-to-zoom, slow motion, step-by-step frame analysis
 - Saved Configurations: Unlimited named layout presets for consistent workflows
-- Export & Share: Professional quality video exports for sharing and presentations
+- Export & Share: Professional quality video exports for sharing and presentations (PENDING)
 
 ## TARGET USERS
 - Sports Coaches: Player technique and team formation analysis
@@ -23,16 +23,16 @@ PitchGrid is a professional mobile application for sports video analysis, develo
 ## TECHNICAL DETAILS
 - Platform: Android (iOS planned)
 - Package ID: com.proliferaite.pitchgrid
-- Current Status: Closed Beta Testing
+- Current Status: Open Testing (Available on Google Play Store)
 - Architecture: Native Android with advanced video processing
 - File Formats: Supports MP4, MOV, and other standard video formats
-- Export Options: Multiple resolutions and aspect ratios
+- Export Options: Multiple resolutions and aspect ratios (PENDING)
 
 ## MONETIZATION
 - Freemium Model: Full-featured free tier with ads
-- Premium Subscription: $1.99/month for ad-free experience and clean exports
-- Free Tier: All analysis features with watermarked exports
-- Premium Benefits: No ads, clean exports, priority support, early feature access
+- Premium Subscription: $1.99/month for ad-free experience and clean exports (PENDING)
+- Free Tier: All analysis features with watermarked exports (PENDING)
+- Premium Benefits: No ads, clean exports (PENDING), priority support, early feature access
 
 ## COMPANY INFORMATION
 - Developer: Proliferaite
@@ -42,10 +42,10 @@ PitchGrid is a professional mobile application for sports video analysis, develo
 - Founded: 2024
 - Location: Global (Remote-first)
 
-## BETA PROGRAM
-Currently in closed beta with select coaches and athletes. Join the testing program:
-1. Join Google Group: https://groups.google.com/g/pitchgrid-testers
-2. Download Beta: https://play.google.com/apps/testing/com.proliferaite.pitchgrid
+## DOWNLOAD & AVAILABILITY
+Now available in open testing! Download directly from the Google Play Store:
+- Google Play Store: https://play.google.com/store/apps/details?id=com.proliferaite.pitchgrid
+- No registration required - install and start analyzing immediately
 
 ## USE CASES
 - Game Film Analysis: Break down game footage from multiple camera angles
@@ -61,7 +61,7 @@ Currently in closed beta with select coaches and athletes. Join the testing prog
 - Intuitive interface requiring minimal training
 - Advanced cropping and zoom capabilities
 - Persistent zoom states across video sessions
-- Professional export quality
+- Professional export quality (PENDING)
 
 ## TECHNOLOGY STACK
 - Frontend: Native Android (Kotlin/Java)
