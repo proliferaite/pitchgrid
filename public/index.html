@@ -325,6 +325,63 @@
             opacity: 0.8;
         }
         
+        /* QR Code Styles */
+        .qr-code-section {
+            margin-top: 40px;
+            text-align: center;
+        }
+        
+        .qr-code-container {
+            display: inline-block;
+            background: white;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+            border: 2px solid #f0f0f0;
+        }
+        
+        .qr-code-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .qr-code-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 8px;
+        }
+        
+        .qr-code-text {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 500;
+        }
+        
+        /* Download section QR code */
+        .qr-code-download {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .download-qr-container {
+            background: white;
+            padding: 16px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border: 1px solid #e0e0e0;
+            margin-top: 16px;
+        }
+        
+        .download-qr-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 6px;
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             .hero {
@@ -352,6 +409,12 @@
             .beta-section {
                 padding: 60px 0;
             }
+            
+            /* Hide QR codes on mobile devices */
+            .qr-code-section,
+            .qr-code-download {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -374,6 +437,16 @@
                     <a href="#demo" class="btn-secondary">
                         See It In Action
                     </a>
+                </div>
+                
+                <!-- QR Code Section (Desktop Only) -->
+                <div class="qr-code-section">
+                    <div class="qr-code-container">
+                        <div class="qr-code-content">
+                            <img src="/qr-code-pitchgrid.png" alt="Download PitchGrid QR Code" class="qr-code-image">
+                            <p class="qr-code-text">Scan with your phone to download</p>
+                        </div>
+                    </div>
                 </div>
                 
                                  <div class="demo-grid" id="demo">
@@ -473,6 +546,14 @@
                     <a href="https://play.google.com/store/apps/details?id=com.proliferaite.pitchgrid" target="_blank" class="btn-primary">
                         Get PitchGrid
                     </a>
+                </div>
+                
+                <div class="beta-step qr-code-download">
+                    <h3>Or Scan to Download</h3>
+                    <p>Quick download with your phone</p>
+                    <div class="download-qr-container">
+                        <img src="/qr-code-pitchgrid.png" alt="Download PitchGrid QR Code" class="download-qr-image">
+                    </div>
                 </div>
                 
                 <div class="beta-step">
