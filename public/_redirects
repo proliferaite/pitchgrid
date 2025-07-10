@@ -5,4 +5,17 @@ http://www.pitchgrid.proliferaite.com/* https://pitchgrid.proliferaite.com/:spla
 # WWW to non-WWW redirects (canonical domain enforcement)
 https://www.pitchgrid.proliferaite.com/* https://pitchgrid.proliferaite.com/:splat 301
 
-# Main domain (proliferaite.com) is separate parent company site - no redirects needed 
+# Main domain (proliferaite.com) is separate parent company site - no redirects needed
+
+# Clean URL rewrites - serve .html files for clean URLs
+/use-cases /use-cases.html 200
+/privacy-policy /privacy-policy.html 200
+/sports-analysis /sports-analysis.html 200
+/baseball-analysis /baseball-analysis.html 200
+/softball-analysis /softball-analysis.html 200
+/basketball-analysis /basketball-analysis.html 200
+/football-analysis /football-analysis.html 200
+/soccer-analysis /soccer-analysis.html 200
+/volleyball-analysis /volleyball-analysis.html 200
+/blog /blog.html 200
+/feedback /feedback.html 200 
