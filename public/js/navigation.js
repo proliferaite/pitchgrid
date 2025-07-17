@@ -7,10 +7,13 @@ function createNavigation() {
             <div class="container">
                 <ul>
                     <li><a href="/">Home</a></li>
+                    <li><a href="/about.html">About</a></li>
                     <li><a href="/blog.html">Blog</a></li>
                     <li><a href="/use-cases.html">Use Cases</a></li>
                     <li><a href="/sports-analysis.html">Sports Analysis</a></li>
-                    <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                    <li><a href="/privacy-policy.html">Privacy</a></li>
+                    <li><a href="/terms.html">Terms</a></li>
                 </ul>
             </div>
         </nav>
@@ -30,7 +33,7 @@ function createNavigationStyles() {
                 list-style: none;
                 display: flex;
                 justify-content: center;
-                gap: 2rem;
+                gap: 1.5rem;
                 flex-wrap: wrap;
                 margin: 0;
                 padding: 0;
@@ -40,9 +43,10 @@ function createNavigationStyles() {
                 text-decoration: none;
                 color: #667eea;
                 font-weight: 500;
-                padding: 0.5rem 1rem;
+                padding: 0.5rem 0.8rem;
                 border-radius: 4px;
                 transition: background 0.3s;
+                white-space: nowrap;
             }
             
             nav a:hover {
@@ -55,9 +59,25 @@ function createNavigationStyles() {
                 color: white;
             }
             
-            @media (max-width: 768px) {
+            @media (max-width: 900px) {
                 nav ul {
                     gap: 1rem;
+                }
+                
+                nav a {
+                    padding: 0.4rem 0.6rem;
+                    font-size: 0.95rem;
+                }
+            }
+            
+            @media (max-width: 600px) {
+                nav ul {
+                    gap: 0.5rem;
+                }
+                
+                nav a {
+                    padding: 0.3rem 0.5rem;
+                    font-size: 0.9rem;
                 }
             }
         </style>
