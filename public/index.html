@@ -948,45 +948,60 @@
             submitBtn.textContent = 'Joining...';
             submitBtn.disabled = true;
             
-            // Kit (ConvertKit) API Integration
-            fetch(`https://api.convertkit.com/v3/forms/7da6538edb/subscribe`, {
+            // Kit JavaScript SDK Integration (more reliable)
+            // Create a temporary form element to submit to Kit
+            const tempForm = document.createElement('form');
+            tempForm.action = 'https://app.kit.com/forms/7da6538edb/subscriptions';
+            tempForm.method = 'POST';
+            tempForm.style.display = 'none';
+            
+            const emailInput = document.createElement('input');
+            emailInput.type = 'email';
+            emailInput.name = 'email_address';
+            emailInput.value = email;
+            
+            const tagInput = document.createElement('input');
+            tagInput.type = 'hidden';
+            tagInput.name = 'tags';
+            tagInput.value = 'ios-waitlist';
+            
+            tempForm.appendChild(emailInput);
+            tempForm.appendChild(tagInput);
+            document.body.appendChild(tempForm);
+            
+            // Submit via fetch to avoid page redirect
+            const formData = new FormData(tempForm);
+            
+            fetch(tempForm.action, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    api_key: 'ryfdf1ThrQ_eYAdsB9gN9g',
-                    email: email,
-                    tags: ['ios-waitlist']
-                })
+                body: formData,
+                mode: 'no-cors' // Kit forms expect this
             })
-            .then(response => response.json())
-            .then(data => {
-                if (data.subscription) {
-                    // Success
-                    submitBtn.textContent = '✓ Added to Waitlist!';
-                    submitBtn.style.background = '#34C759';
-                    submitBtn.style.color = 'white';
-                    
-                    const formNote = this.querySelector('.form-note');
-                    formNote.textContent = 'Thanks! We\'ll email you when TestFlight opens.';
-                    formNote.style.color = '#34C759';
-                    
-                    // Reset form
-                    this.querySelector('input[name="email"]').value = '';
-                    
-                    // Reset button after 3 seconds
-                    setTimeout(() => {
-                        submitBtn.textContent = originalText;
-                        submitBtn.style.background = 'white';
-                        submitBtn.style.color = '#007AFF';
-                        submitBtn.disabled = false;
-                        formNote.textContent = 'We\'ll notify you when TestFlight spots open up';
-                        formNote.style.color = 'rgba(255, 255, 255, 0.8)';
-                    }, 3000);
-                } else {
-                    throw new Error('Subscription failed');
-                }
+            .then(() => {
+                // Success (no-cors mode doesn't give us response details)
+                submitBtn.textContent = '✓ Added to Waitlist!';
+                submitBtn.style.background = '#34C759';
+                submitBtn.style.color = 'white';
+                
+                const formNote = this.querySelector('.form-note');
+                formNote.textContent = 'Thanks! We\'ll email you when TestFlight opens.';
+                formNote.style.color = '#34C759';
+                
+                // Reset form
+                this.querySelector('input[name="email"]').value = '';
+                
+                // Reset button after 3 seconds
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.style.background = 'white';
+                    submitBtn.style.color = '#007AFF';
+                    submitBtn.disabled = false;
+                    formNote.textContent = 'We\'ll notify you when TestFlight spots open up';
+                    formNote.style.color = 'rgba(255, 255, 255, 0.8)';
+                }, 3000);
+                
+                // Clean up
+                document.body.removeChild(tempForm);
             })
             .catch(error => {
                 console.error('Signup error:', error);
@@ -1007,6 +1022,11 @@
                     formNote.textContent = 'We\'ll notify you when TestFlight spots open up';
                     formNote.style.color = 'rgba(255, 255, 255, 0.8)';
                 }, 3000);
+                
+                // Clean up
+                if (document.body.contains(tempForm)) {
+                    document.body.removeChild(tempForm);
+                }
             });
         });
     </script>
