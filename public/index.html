@@ -292,6 +292,161 @@
             }
         }
         
+        /* iOS Banner Section */
+        .ios-banner {
+            background: linear-gradient(135deg, #007AFF 0%, #5856D6 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ios-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            background-size: 50px 50px;
+            animation: float 20s infinite linear;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px) translateX(0px); }
+            100% { transform: translateY(-100px) translateX(-100px); }
+        }
+        
+        .ios-banner-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .ios-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .ios-banner h2 {
+            font-size: 3rem;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+        
+        .ios-banner p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            line-height: 1.5;
+        }
+        
+        .ios-signup {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .ios-signup h3 {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .signup-subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .email-signup-form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        
+        .email-input {
+            flex: 1;
+            padding: 16px 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .email-input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .email-input:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .signup-btn {
+            padding: 16px 30px;
+            background: white;
+            color: #007AFF;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .signup-btn:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .form-note {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .ios-banner {
+                padding: 60px 0;
+            }
+            
+            .ios-banner h2 {
+                font-size: 2.5rem;
+            }
+            
+            .ios-signup {
+                padding: 30px 20px;
+                margin: 0 20px;
+            }
+            
+            .form-group {
+                flex-direction: column;
+                gap: 16px;
+            }
+            
+            .signup-btn {
+                width: 100%;
+            }
+        }
+
         /* Features Section */
         .features {
             padding: 100px 0;
@@ -569,6 +724,31 @@
         </div>
     </section>
 
+    <!-- iOS Coming Soon Banner -->
+    <section class="ios-banner">
+        <div class="container">
+            <div class="ios-banner-content">
+                <div class="ios-icon">📱</div>
+                <h2>Coming to iPhone</h2>
+                <p>PitchGrid is coming to iOS! Be among the first to experience multi-angle video analysis on your iPhone.</p>
+                
+                <div class="ios-signup">
+                    <h3>Get Early Access</h3>
+                    <p class="signup-subtitle">Limited TestFlight spots available</p>
+                    
+                    <!-- Email signup form - replace action URL with your email service -->
+                    <form class="email-signup-form" action="#" method="POST" id="ios-signup">
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Enter your email" required class="email-input">
+                            <button type="submit" class="signup-btn">Join Waitlist</button>
+                        </div>
+                        <p class="form-note">We'll notify you when TestFlight spots open up</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Features Section -->
     <section class="features">
         <div class="container">
@@ -755,9 +935,81 @@
          </div>
          </footer>
 
-
-    
-
+    <!-- iOS Signup Form Handler -->
+    <script>
+        document.getElementById('ios-signup').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = this.querySelector('input[name="email"]').value;
+            const submitBtn = this.querySelector('.signup-btn');
+            const originalText = submitBtn.textContent;
+            
+            // Show loading state
+            submitBtn.textContent = 'Joining...';
+            submitBtn.disabled = true;
+            
+            // Kit (ConvertKit) API Integration
+            fetch(`https://api.kit.com/v3/forms/7da6538edb/subscribe`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    api_key: 'ryfdf1ThrQ_eYAdsB9gN9g',
+                    email: email,
+                    tags: ['ios-waitlist']
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.subscription) {
+                    // Success
+                    submitBtn.textContent = '✓ Added to Waitlist!';
+                    submitBtn.style.background = '#34C759';
+                    submitBtn.style.color = 'white';
+                    
+                    const formNote = this.querySelector('.form-note');
+                    formNote.textContent = 'Thanks! We\'ll email you when TestFlight opens.';
+                    formNote.style.color = '#34C759';
+                    
+                    // Reset form
+                    this.querySelector('input[name="email"]').value = '';
+                    
+                    // Reset button after 3 seconds
+                    setTimeout(() => {
+                        submitBtn.textContent = originalText;
+                        submitBtn.style.background = 'white';
+                        submitBtn.style.color = '#007AFF';
+                        submitBtn.disabled = false;
+                        formNote.textContent = 'We\'ll notify you when TestFlight spots open up';
+                        formNote.style.color = 'rgba(255, 255, 255, 0.8)';
+                    }, 3000);
+                } else {
+                    throw new Error('Subscription failed');
+                }
+            })
+            .catch(error => {
+                console.error('Signup error:', error);
+                submitBtn.textContent = 'Try Again';
+                submitBtn.style.background = '#FF3B30';
+                submitBtn.style.color = 'white';
+                submitBtn.disabled = false;
+                
+                const formNote = this.querySelector('.form-note');
+                formNote.textContent = 'Something went wrong. Please try again.';
+                formNote.style.color = '#FF3B30';
+                
+                // Reset error state after 3 seconds
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.style.background = 'white';
+                    submitBtn.style.color = '#007AFF';
+                    formNote.textContent = 'We\'ll notify you when TestFlight spots open up';
+                    formNote.style.color = 'rgba(255, 255, 255, 0.8)';
+                }, 3000);
+            });
+        });
+    </script>
 
 </body>
 </html> 
