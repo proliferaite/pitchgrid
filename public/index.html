@@ -957,7 +957,7 @@
             
             const emailInput = document.createElement('input');
             emailInput.type = 'email';
-            emailInput.name = 'email_address';
+            emailInput.name = 'email';
             emailInput.value = email;
             
             const tagInput = document.createElement('input');
@@ -971,6 +971,10 @@
             
             // Submit via fetch to avoid page redirect
             const formData = new FormData(tempForm);
+            
+            // Debug logging
+            console.log('Submitting to:', tempForm.action);
+            console.log('Form data:', Object.fromEntries(formData));
             
             fetch(tempForm.action, {
                 method: 'POST',
