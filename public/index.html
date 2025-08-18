@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PitchGrid - Sports Video Analysis Made Simple</title>
-    <meta name="description" content="Synchronized video analysis for sports coaches and athletes. Sync, analyze, and improve performance with frame-perfect precision using just your smartphone.">
+    <meta name="description" content="Synchronized video analysis for sports coaches and athletes. Now on Android and iOS TestFlight (beta). Sync, analyze, and improve performance with frame-perfect precision using just your smartphone.">
     
     <!-- Favicon and App Icons -->
     <link rel="icon" type="image/png" sizes="512x512" href="/developer_icon_512.png">
@@ -16,7 +16,7 @@
     
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="PitchGrid - Sports Video Analysis Made Simple">
-    <meta property="og:description" content="Synchronized video analysis for sports coaches and athletes. Sync, analyze, and improve performance with frame-perfect precision using just your smartphone.">
+    <meta property="og:description" content="Synchronized video analysis for sports coaches and athletes. Android available now. iOS TestFlight beta open for a limited time.">
     <meta property="og:image" content="https://pitchgrid.proliferaite.com/developer_header_4096x2304.png">
     <meta property="og:url" content="https://pitchgrid.proliferaite.com/">
     <meta property="og:type" content="website">
@@ -25,7 +25,7 @@
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="PitchGrid - Sports Video Analysis Made Simple">
-    <meta name="twitter:description" content="Synchronized video analysis for sports coaches and athletes. Sync, analyze, and improve performance with frame-perfect precision using just your smartphone.">
+    <meta name="twitter:description" content="Synchronized video analysis for sports coaches and athletes. Android available now. iOS TestFlight beta open for a limited time.">
     <meta name="twitter:image" content="https://pitchgrid.proliferaite.com/developer_header_4096x2304.png">
     
     <!-- Theme Color -->
@@ -45,19 +45,38 @@
     
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "PitchGrid",
-        "description": "Synchronized video analysis for sports coaches and athletes. Sync, analyze, and improve performance with frame-perfect precision using just your smartphone.",
-        "applicationCategory": "Sports",
-        "operatingSystem": "Android",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
+    [
+        {
+            "@context": "https://schema.org",
+            "@type": "MobileApplication",
+            "name": "PitchGrid",
+            "url": "https://pitchgrid.proliferaite.com/",
+            "operatingSystem": "Android",
+            "applicationCategory": "Sports",
+            "description": "Synchronized video analysis for sports coaches and athletes. Android available now.",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD",
+                "url": "https://play.google.com/store/apps/details?id=com.proliferaite.pitchgrid"
+            }
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "MobileApplication",
+            "name": "PitchGrid",
+            "url": "https://pitchgrid.proliferaite.com/",
+            "operatingSystem": "iOS",
+            "applicationCategory": "Sports",
+            "description": "Synchronized video analysis for sports coaches and athletes. iOS TestFlight beta open for a limited time.",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD",
+                "url": "https://testflight.apple.com/join/a3K7ym9w"
+            }
         }
-    }
+    ]
     </script>
     
     <!-- Google AdSense -->
@@ -670,6 +689,9 @@
                     <a href="https://play.google.com/store/apps/details?id=com.proliferaite.pitchgrid" target="_blank" class="btn-primary">
                         Download Now
                     </a>
+                    <a href="https://testflight.apple.com/join/a3K7ym9w" target="_blank" class="btn-secondary">
+                        Join iOS TestFlight (Beta)
+                    </a>
                 </div>
                 
                 <!-- Promotional Demo Video -->
@@ -724,26 +746,21 @@
         </div>
     </section>
 
-    <!-- iOS Coming Soon Banner -->
+    <!-- iOS TestFlight Banner -->
     <section class="ios-banner">
         <div class="container">
             <div class="ios-banner-content">
                 <div class="ios-icon">🍎</div>
-                <h2>Coming to iPhone</h2>
-                <p>PitchGrid is coming to iOS! Be among the first to experience multi-angle video analysis on your iPhone.</p>
+                <h2>iOS TestFlight Beta is open</h2>
+                <p>Join now — open enrollment for a limited time. Experience multi-angle video analysis on your iPhone.</p>
                 
                 <div class="ios-signup">
-                    <h3>Get Early Access</h3>
-                    <p class="signup-subtitle">Limited TestFlight spots available</p>
-                    
-                    <!-- Email signup form - replace action URL with your email service -->
-                    <form class="email-signup-form" action="#" method="POST" id="ios-signup">
-                        <div class="form-group">
-                            <input type="email" name="email" placeholder="Enter your email" required class="email-input">
-                            <button type="submit" class="signup-btn">Join Waitlist</button>
-                        </div>
-                        <p class="form-note">We'll notify you when TestFlight spots open up</p>
-                    </form>
+                    <h3>Get it on TestFlight</h3>
+                    <p class="signup-subtitle">Open enrollment — limited time</p>
+                    <div class="form-group" style="justify-content:center;">
+                        <a href="https://testflight.apple.com/join/a3K7ym9w" target="_blank" class="btn-primary">Join iOS TestFlight</a>
+                    </div>
+                    <p class="form-note">Requires the TestFlight app installed</p>
                 </div>
             </div>
         </div>
@@ -936,105 +953,7 @@
          </div>
          </footer>
 
-    <!-- iOS Signup Form Handler -->
-    <script>
-        document.getElementById('ios-signup').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const email = this.querySelector('input[name="email"]').value;
-            const submitBtn = this.querySelector('.signup-btn');
-            const originalText = submitBtn.textContent;
-            
-            // Show loading state
-            submitBtn.textContent = 'Joining...';
-            submitBtn.disabled = true;
-            
-            // Kit JavaScript SDK Integration (more reliable)
-            // Create a temporary form element to submit to Kit
-            const tempForm = document.createElement('form');
-            tempForm.action = 'https://app.kit.com/forms/8354720/subscriptions';
-            tempForm.method = 'POST';
-            tempForm.style.display = 'none';
-            
-            const emailInput = document.createElement('input');
-            emailInput.type = 'email';
-            emailInput.name = 'email';
-            emailInput.value = email;
-            
-            const tagInput = document.createElement('input');
-            tagInput.type = 'hidden';
-            tagInput.name = 'tags';
-            tagInput.value = 'ios-waitlist';
-            
-            tempForm.appendChild(emailInput);
-            tempForm.appendChild(tagInput);
-            document.body.appendChild(tempForm);
-            
-            // Submit via fetch to avoid page redirect
-            const formData = new FormData(tempForm);
-            
-            // Debug logging
-            console.log('Submitting to:', tempForm.action);
-            console.log('Form data:', Object.fromEntries(formData));
-            
-            fetch(tempForm.action, {
-                method: 'POST',
-                body: formData,
-                mode: 'no-cors' // Kit forms expect this
-            })
-            .then(() => {
-                // Success (no-cors mode doesn't give us response details)
-                submitBtn.textContent = '✓ Added to Waitlist!';
-                submitBtn.style.background = '#34C759';
-                submitBtn.style.color = 'white';
-                
-                const formNote = this.querySelector('.form-note');
-                formNote.textContent = 'Thanks! We\'ll email you when TestFlight opens.';
-                formNote.style.color = '#34C759';
-                
-                // Reset form
-                this.querySelector('input[name="email"]').value = '';
-                
-                // Reset button after 3 seconds
-                setTimeout(() => {
-                    submitBtn.textContent = originalText;
-                    submitBtn.style.background = 'white';
-                    submitBtn.style.color = '#007AFF';
-                    submitBtn.disabled = false;
-                    formNote.textContent = 'We\'ll notify you when TestFlight spots open up';
-                    formNote.style.color = 'rgba(255, 255, 255, 0.8)';
-                }, 3000);
-                
-                // Clean up
-                document.body.removeChild(tempForm);
-            })
-            .catch(error => {
-                console.error('Signup error:', error);
-                submitBtn.textContent = 'Try Again';
-                submitBtn.style.background = '#FF3B30';
-                submitBtn.style.color = 'white';
-                submitBtn.disabled = false;
-                
-                const formNote = this.querySelector('.form-note');
-                formNote.textContent = 'Something went wrong. Please try again.';
-                formNote.style.color = '#FF3B30';
-                
-                // Reset error state after 3 seconds
-                setTimeout(() => {
-                    submitBtn.textContent = originalText;
-                    submitBtn.style.background = 'white';
-                    submitBtn.style.color = '#007AFF';
-                    formNote.textContent = 'We\'ll notify you when TestFlight spots open up';
-                    formNote.style.color = 'rgba(255, 255, 255, 0.8)';
-                }, 3000);
-                
-                // Clean up
-                if (document.body.contains(tempForm)) {
-                    document.body.removeChild(tempForm);
-                }
-            });
-        });
-    </script>
+    
 
 </body>
 </html> 
