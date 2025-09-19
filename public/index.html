@@ -169,8 +169,11 @@
         }
         
         .store-badge img {
-            height: 48px;
+            height: 54px;
+            display: block;
         }
+        .store-badge.google-play img { height: 58px; }
+        .store-badge.app-store img { height: 52px; }
         
         .btn-primary {
             background: #fff;
@@ -320,160 +323,6 @@
             }
         }
         
-        /* iOS Banner Section */
-        .ios-banner {
-            background: linear-gradient(135deg, #007AFF 0%, #5856D6 100%);
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .ios-banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
-            background-size: 50px 50px;
-            animation: float 20s infinite linear;
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(0px) translateX(0px); }
-            100% { transform: translateY(-100px) translateX(-100px); }
-        }
-        
-        .ios-banner-content {
-            position: relative;
-            z-index: 2;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .ios-icon {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            display: block;
-        }
-        
-        .ios-banner h2 {
-            font-size: 3rem;
-            margin-bottom: 16px;
-            font-weight: 700;
-        }
-        
-        .ios-banner p {
-            font-size: 1.3rem;
-            margin-bottom: 40px;
-            opacity: 0.95;
-            line-height: 1.5;
-        }
-        
-        .ios-signup {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .ios-signup h3 {
-            font-size: 1.8rem;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-        
-        .signup-subtitle {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-        
-        .email-signup-form {
-            max-width: 400px;
-            margin: 0 auto;
-        }
-        
-        .form-group {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 16px;
-        }
-        
-        .email-input {
-            flex: 1;
-            padding: 16px 20px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50px;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            font-size: 1rem;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-        
-        .email-input::placeholder {
-            color: rgba(255, 255, 255, 0.7);
-        }
-        
-        .email-input:focus {
-            outline: none;
-            border-color: rgba(255, 255, 255, 0.6);
-            background: rgba(255, 255, 255, 0.2);
-        }
-        
-        .signup-btn {
-            padding: 16px 30px;
-            background: white;
-            color: #007AFF;
-            border: none;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-        }
-        
-        .signup-btn:hover {
-            background: #f0f0f0;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-        }
-        
-        .form-note {
-            font-size: 0.9rem;
-            opacity: 0.8;
-            margin: 0;
-        }
-        
-        @media (max-width: 768px) {
-            .ios-banner {
-                padding: 60px 0;
-            }
-            
-            .ios-banner h2 {
-                font-size: 2.5rem;
-            }
-            
-            .ios-signup {
-                padding: 30px 20px;
-                margin: 0 20px;
-            }
-            
-            .form-group {
-                flex-direction: column;
-                gap: 16px;
-            }
-            
-            .signup-btn {
-                width: 100%;
-            }
-        }
 
         /* Features Section */
         .features {
@@ -695,10 +544,10 @@
                 </div>
                 
                 <div class="cta-buttons">
-                    <a href="https://play.google.com/store/apps/details?id=com.proliferaite.pitchgrid" target="_blank" rel="noopener" class="store-badge">
+                    <a href="https://play.google.com/store/apps/details?id=com.proliferaite.pitchgrid" target="_blank" rel="noopener" class="store-badge google-play">
                         <img src="/img/badges/google-play-badge.png" alt="Get it on Google Play">
                     </a>
-                    <a href="https://apps.apple.com/us/app/pitchgrid/id6748971191" target="_blank" rel="noopener" class="store-badge">
+                    <a href="https://apps.apple.com/us/app/pitchgrid/id6748971191" target="_blank" rel="noopener" class="store-badge app-store">
                         <img src="/img/badges/app-store-badge.svg" alt="Download on the App Store">
                     </a>
                 </div>
@@ -755,25 +604,7 @@
         </div>
     </section>
 
-    <!-- iOS App Store Banner (replaces TestFlight) -->
-    <section class="ios-banner" id="app-store">
-        <div class="container">
-            <div class="ios-banner-content">
-                <div class="ios-icon">🍎</div>
-                <h2>Now on the App Store</h2>
-                <p>Download on iPhone and iPad. Experience multi-angle video analysis on your iOS device.</p>
-                
-                <div class="ios-signup">
-                    <h3>Download on the App Store</h3>
-                    <p class="signup-subtitle">iOS version now available</p>
-                    <div class="form-group" style="justify-content:center;">
-                        <a href="https://apps.apple.com/us/app/pitchgrid/id6748971191" id="app-store-link" target="_blank" rel="noopener" class="btn-primary">Open App Store</a>
-                    </div>
-                    <p class="form-note">Works on iPhone and iPad</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    
 
     <!-- Features Section -->
     <section class="features">
@@ -844,10 +675,10 @@
                     <h3>Download now</h3>
                     <p>Choose your platform</p>
                     <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; align-items:center;">
-                        <a href="https://play.google.com/store/apps/details?id=com.proliferaite.pitchgrid" target="_blank" rel="noopener" class="store-badge">
+                        <a href="https://play.google.com/store/apps/details?id=com.proliferaite.pitchgrid" target="_blank" rel="noopener" class="store-badge google-play">
                             <img src="/img/badges/google-play-badge.png" alt="Get it on Google Play">
                         </a>
-                        <a href="https://apps.apple.com/us/app/pitchgrid/id6748971191" target="_blank" rel="noopener" class="store-badge">
+                        <a href="https://apps.apple.com/us/app/pitchgrid/id6748971191" target="_blank" rel="noopener" class="store-badge app-store">
                             <img src="/img/badges/app-store-badge.svg" alt="Download on the App Store">
                         </a>
                     </div>
