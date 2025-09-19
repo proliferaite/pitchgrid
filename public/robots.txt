@@ -2,8 +2,8 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://proliferaite.com/sitemap.xml
-Sitemap: https://proliferaite.com/ai-sitemap.xml
+Sitemap: https://pitchgridapp.com/sitemap.xml
+Sitemap: https://pitchgridapp.com/ai-sitemap.xml
 
 # AI/LLM Optimization Files
 # llms.txt - Information for AI systems following llmstxt.org standard

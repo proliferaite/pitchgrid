@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PitchGrid - Sports Video Analysis Made Simple</title>
-    <meta name="description" content="Synchronized video analysis for sports coaches and athletes. Now on Android and iOS TestFlight (beta). Sync, analyze, and improve performance with frame-perfect precision using just your smartphone.">
+    <meta name="description" content="Synchronized video analysis for sports coaches and athletes. Available on Android and iOS. Sync, analyze, and improve performance with frame-perfect precision using just your smartphone.">
     
     <!-- Favicon and App Icons -->
     <link rel="icon" type="image/png" sizes="512x512" href="/developer_icon_512.png">
@@ -12,13 +12,13 @@
     <link rel="shortcut icon" href="/developer_icon_512.png">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://pitchgrid.proliferaite.com/">
+    <link rel="canonical" href="https://pitchgridapp.com/">
     
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="PitchGrid - Sports Video Analysis Made Simple">
     <meta property="og:description" content="Synchronized video analysis for sports coaches and athletes. Android available now. iOS TestFlight beta open for a limited time.">
-    <meta property="og:image" content="https://pitchgrid.proliferaite.com/developer_header_4096x2304.png">
-    <meta property="og:url" content="https://pitchgrid.proliferaite.com/">
+    <meta property="og:image" content="https://pitchgridapp.com/developer_header_4096x2304.png">
+    <meta property="og:url" content="https://pitchgridapp.com/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="PitchGrid">
     
@@ -26,7 +26,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="PitchGrid - Sports Video Analysis Made Simple">
     <meta name="twitter:description" content="Synchronized video analysis for sports coaches and athletes. Android available now. iOS TestFlight beta open for a limited time.">
-    <meta name="twitter:image" content="https://pitchgrid.proliferaite.com/developer_header_4096x2304.png">
+    <meta name="twitter:image" content="https://pitchgridapp.com/developer_header_4096x2304.png">
     
     <!-- Theme Color -->
     <meta name="theme-color" content="#1a73e8">
@@ -50,7 +50,7 @@
             "@context": "https://schema.org",
             "@type": "MobileApplication",
             "name": "PitchGrid",
-            "url": "https://pitchgrid.proliferaite.com/",
+            "url": "https://pitchgridapp.com/",
             "operatingSystem": "Android",
             "applicationCategory": "Sports",
             "description": "Synchronized video analysis for sports coaches and athletes. Android available now.",
@@ -65,15 +65,15 @@
             "@context": "https://schema.org",
             "@type": "MobileApplication",
             "name": "PitchGrid",
-            "url": "https://pitchgrid.proliferaite.com/",
+            "url": "https://pitchgridapp.com/",
             "operatingSystem": "iOS",
             "applicationCategory": "Sports",
-            "description": "Synchronized video analysis for sports coaches and athletes. iOS TestFlight beta open for a limited time.",
+            "description": "Synchronized video analysis for sports coaches and athletes. Available on the App Store.",
             "offers": {
                 "@type": "Offer",
                 "price": "0",
                 "priceCurrency": "USD",
-                "url": "https://testflight.apple.com/join/a3K7ym9w"
+                "url": "https://apps.apple.com/us/app/pitchgrid/id6748971191"
             }
         }
     ]
@@ -161,6 +161,15 @@
             justify-content: center;
             flex-wrap: wrap;
             margin-bottom: 60px;
+        }
+        
+        .store-badge {
+            display: inline-block;
+            line-height: 0;
+        }
+        
+        .store-badge img {
+            height: 48px;
         }
         
         .btn-primary {
@@ -686,11 +695,11 @@
                 </div>
                 
                 <div class="cta-buttons">
-                    <a href="https://play.google.com/store/apps/details?id=com.proliferaite.pitchgrid" target="_blank" class="btn-primary">
-                        Download Now
+                    <a href="https://play.google.com/store/apps/details?id=com.proliferaite.pitchgrid" target="_blank" rel="noopener" class="store-badge">
+                        <img src="/img/badges/google-play-badge.png" alt="Get it on Google Play">
                     </a>
-                    <a href="https://testflight.apple.com/join/a3K7ym9w" target="_blank" class="btn-secondary">
-                        Join iOS TestFlight (Beta)
+                    <a href="https://apps.apple.com/us/app/pitchgrid/id6748971191" target="_blank" rel="noopener" class="store-badge">
+                        <img src="/img/badges/app-store-badge.svg" alt="Download on the App Store">
                     </a>
                 </div>
                 
@@ -746,21 +755,21 @@
         </div>
     </section>
 
-    <!-- iOS TestFlight Banner -->
-    <section class="ios-banner">
+    <!-- iOS App Store Banner (replaces TestFlight) -->
+    <section class="ios-banner" id="app-store">
         <div class="container">
             <div class="ios-banner-content">
                 <div class="ios-icon">🍎</div>
-                <h2>iOS TestFlight Beta is open</h2>
-                <p>Join now — open enrollment for a limited time. Experience multi-angle video analysis on your iPhone.</p>
+                <h2>Now on the App Store</h2>
+                <p>Download on iPhone and iPad. Experience multi-angle video analysis on your iOS device.</p>
                 
                 <div class="ios-signup">
-                    <h3>Get it on TestFlight</h3>
-                    <p class="signup-subtitle">Open enrollment — limited time</p>
+                    <h3>Download on the App Store</h3>
+                    <p class="signup-subtitle">iOS version now available</p>
                     <div class="form-group" style="justify-content:center;">
-                        <a href="https://testflight.apple.com/join/a3K7ym9w" target="_blank" class="btn-primary">Join iOS TestFlight</a>
+                        <a href="https://apps.apple.com/us/app/pitchgrid/id6748971191" id="app-store-link" target="_blank" rel="noopener" class="btn-primary">Open App Store</a>
                     </div>
-                    <p class="form-note">Requires the TestFlight app installed</p>
+                    <p class="form-note">Works on iPhone and iPad</p>
                 </div>
             </div>
         </div>
@@ -828,15 +837,20 @@
      <section class="beta-section" id="beta">
          <div class="container">
             <h2>🚀 Get PitchGrid</h2>
-            <p>Available now on Google Play. Free to download and try.</p>
+            <p>Available now on Google Play and the App Store.</p>
             
             <div class="beta-steps">
                 <div class="beta-step">
                     <h3>Download now</h3>
-                    <p>Get it from Google Play Store</p>
-                    <a href="https://play.google.com/store/apps/details?id=com.proliferaite.pitchgrid" target="_blank" class="btn-primary">
-                        Get PitchGrid
-                    </a>
+                    <p>Choose your platform</p>
+                    <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; align-items:center;">
+                        <a href="https://play.google.com/store/apps/details?id=com.proliferaite.pitchgrid" target="_blank" rel="noopener" class="store-badge">
+                            <img src="/img/badges/google-play-badge.png" alt="Get it on Google Play">
+                        </a>
+                        <a href="https://apps.apple.com/us/app/pitchgrid/id6748971191" target="_blank" rel="noopener" class="store-badge">
+                            <img src="/img/badges/app-store-badge.svg" alt="Download on the App Store">
+                        </a>
+                    </div>
                 </div>
                 
                 <div class="beta-step qr-code-download">

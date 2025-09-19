@@ -1,4 +1,5 @@
 # HTTP to HTTPS redirects (backup - Cloudflare usually handles this)  
-http://pitchgrid.proliferaite.com/* https://pitchgrid.proliferaite.com/:splat 301
+http://pitchgrid.proliferaite.com/* https://pitchgridapp.com/:splat 301
+https://pitchgrid.proliferaite.com/* https://pitchgridapp.com/:splat 301
 
 # Main domain (proliferaite.com) is separate parent company site - no redirects needed 

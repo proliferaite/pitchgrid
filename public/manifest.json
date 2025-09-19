@@ -77,6 +77,11 @@
       "platform": "play",
       "url": "https://play.google.com/store/apps/details?id=com.proliferaite.pitchgrid",
       "id": "com.proliferaite.pitchgrid"
+    },
+    {
+      "platform": "itunes",
+      "url": "https://apps.apple.com/us/app/pitchgrid/id6748971191",
+      "id": "6748971191"
     }
   ],
   "prefer_related_applications": true,
@@ -98,7 +103,7 @@
       "name": "Share Feedback",
       "short_name": "Feedback",
       "description": "Share your PitchGrid experience and suggestions",
-      "url": "https://proliferaite.com/feedback.html",
+      "url": "https://pitchgridapp.com/feedback.html",
       "icons": [
         {
           "src": "/developer_icon_512.png",
