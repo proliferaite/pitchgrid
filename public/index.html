@@ -708,7 +708,19 @@
                 }, fadeMs);
             }
             // Start cycling after initial dwell
-            setInterval(advance, switchMs);
+            var intervalId = setInterval(advance, switchMs);
+            // Pause on hover
+            el.addEventListener('mouseenter', function() {
+                if (intervalId) {
+                    clearInterval(intervalId);
+                    intervalId = null;
+                }
+            });
+            el.addEventListener('mouseleave', function() {
+                if (!intervalId) {
+                    intervalId = setInterval(advance, switchMs);
+                }
+            });
         })();
     </script>
 
