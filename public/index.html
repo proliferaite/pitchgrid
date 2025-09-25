@@ -154,6 +154,16 @@
             margin-left: auto;
             margin-right: auto;
         }
+
+        /* Rotating headline */
+        .rotating-text {
+            display: inline-block;
+            transition: opacity 0.35s ease;
+            will-change: opacity;
+        }
+        .rotating-text.hidden {
+            opacity: 0;
+        }
         
         .cta-buttons {
             display: flex;
@@ -547,8 +557,7 @@
                 <h1>PitchGrid</h1>
                 <div class="hero-tagline">Sports video analysis made simple</div>
 <div class="hero-subtitle">
-                    Sync multiple camera angles and watch them side-by-side.<br>
-                    Just use the phones you already have.
+                    <span id="rotating-headline" class="rotating-text">Your athlete deserves more than guesswork. PitchGrid lets you compare two videos—frame-aligned to release point—so you can spot progress instantly. Free. No sensors. Just results.</span>
                 </div>
                 
                 <div class="cta-buttons">
@@ -671,6 +680,37 @@
              (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
     </div>
+
+    <script>
+        (function() {
+            var messages = [
+                "Your athlete deserves more than guesswork. PitchGrid lets you compare two videos—frame-aligned to release point—so you can spot progress instantly. Free. No sensors. Just results.",
+                "Why wait for game day to find mistakes? Compare your reps to coach’s demo clips and adjust instantly. PitchGrid makes perfect practice possible.",
+                "From baseball to basketball, swimming to soccer—if your sport has technique, PitchGrid helps you master it. Align, compare, and improve with free pro-level video analysis.",
+                "Stop guessing if your form is improving. PitchGrid syncs your clips to the exact moment of motion—so you know if you’re getting better, or just repeating mistakes.",
+                "Whether it’s a golf swing, tennis serve, or softball pitch—PitchGrid lines up your videos so you can actually see the difference. No sensors. No gimmicks. Just proof of progress.",
+                "Your athlete deserves more than guesswork. PitchGrid lets you compare two videos—frame-aligned to release point—so you can spot progress instantly. Free. No sensors. Just results.",
+                "Running a youth team? Save hours on video analysis. Upload short clips, align them automatically, and show players exactly how they’re improving. Pro-level insights—without pro-level costs.",
+                "Video breakdowns don’t need $500 gadgets. PitchGrid does it free. Align. Compare. Improve."
+            ];
+            var el = document.getElementById('rotating-headline');
+            if (!el) return;
+            var index = 0;
+            var switchMs = 5000;
+            var fadeMs = 350;
+            function advance() {
+                var nextIndex = (index + 1) % messages.length;
+                el.classList.add('hidden');
+                setTimeout(function() {
+                    el.textContent = messages[nextIndex];
+                    el.classList.remove('hidden');
+                    index = nextIndex;
+                }, fadeMs);
+            }
+            // Start cycling after initial dwell
+            setInterval(advance, switchMs);
+        })();
+    </script>
 
          <!-- Download Section -->
      <section class="beta-section" id="beta">
