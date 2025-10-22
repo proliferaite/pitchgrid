@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shared Grid - PitchGrid</title>
+    <meta name="description" content="View shared PitchGrid analysis">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Shared Grid - PitchGrid">
+    <meta property="og:description" content="View this video analysis in the PitchGrid app">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://pitchgridapp.com/developer_header_4096x2304.png">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Shared Grid - PitchGrid">
+    <meta name="twitter:description" content="View this video analysis in the PitchGrid app">
+    <meta name="twitter:image" content="https://pitchgridapp.com/developer_header_4096x2304.png">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            text-align: center;
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: white;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+        
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+        }
+        
+        .secondary-button {
+            display: inline-block;
+            margin-top: 15px;
+            color: white;
+            opacity: 0.8;
+            text-decoration: underline;
+            font-size: 14px;
+        }
+        
+        .secondary-button:hover {
+            opacity: 1;
+        }
+        
+        .status {
+            margin-top: 20px;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+        
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">⚾️</div>
+        <h1>Shared PitchGrid</h1>
+        <p id="message">Opening this grid in the PitchGrid app...</p>
+        <div class="status" id="status">
+            <span class="spinner"></span>
+        </div>
+        <a href="#" class="button" id="openButton" style="display:none;">Open in PitchGrid</a>
+        <a href="/" class="secondary-button">Go to Homepage</a>
+    </div>
+
+    <script>
+        // Extract share token from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const shareToken = urlParams.get('token') || window.location.pathname.split('/').pop();
+        
+        const message = document.getElementById('message');
+        const status = document.getElementById('status');
+        const openButton = document.getElementById('openButton');
+        
+        if (shareToken && shareToken !== 'share.html') {
+            // Construct deep link
+            const deepLink = `pitchgrid://share/${shareToken}`;
+            const universalLink = `https://pitchgridapp.com/share/${shareToken}`;
+            
+            // Try to open the app immediately
+            window.location.href = deepLink;
+            
+            // If user is still here after 2 seconds, show manual button
+            setTimeout(() => {
+                status.style.display = 'none';
+                openButton.style.display = 'inline-block';
+                openButton.href = deepLink;
+                message.textContent = "Tap the button below to open in PitchGrid";
+            }, 2000);
+            
+            // Fallback: If app isn't installed, redirect to App Store after 3 seconds
+            setTimeout(() => {
+                const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+                const isAndroid = /Android/.test(navigator.userAgent);
+                
+                if (isIOS) {
+                    message.textContent = "Don't have PitchGrid? Download from the App Store";
+                    openButton.textContent = "Download PitchGrid";
+                    openButton.href = "https://apps.apple.com/app/pitchgrid/id6738832132";
+                } else if (isAndroid) {
+                    message.textContent = "Don't have PitchGrid? Download from Google Play";
+                    openButton.textContent = "Download PitchGrid";
+                    openButton.href = "https://play.google.com/store/apps/details?id=com.proliferaite.pitchgrid";
+                }
+            }, 3000);
+        } else {
+            // No token provided
+            status.innerHTML = '';
+            message.textContent = "Invalid share link. Please check the URL and try again.";
+        }
+    </script>
+</body>
+</html>
+
