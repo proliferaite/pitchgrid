@@ -1,7 +1,16 @@
+# Headers for all pages
 /*
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://tpc.googlesyndication.com https://googleads.g.doubleclick.net https://www.google.com https://www.gstatic.com https://www.googletagmanager.com https://widget.trustpilot.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: http:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://pagead2.googlesyndication.com https://api.kit.com https://api.convertkit.com https://app.kit.com https://www.google-analytics.com; frame-src https://tpc.googlesyndication.com https://googleads.g.doubleclick.net https://widget.trustpilot.com
-  X-Content-Type-Options: nosniff
   X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
   X-XSS-Protection: 1; mode=block
   Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: camera=(), microphone=(), geolocation=() 
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# Share pages need to connect to the API
+/share/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: http:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://pitchgrid-api.proliferaite.workers.dev; frame-src 'none'
+
+# Apple App Site Association (must be served without content-type restrictions)
+/.well-known/apple-app-site-association
+  Content-Type: application/json
+  Access-Control-Allow-Origin: *
