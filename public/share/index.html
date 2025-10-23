@@ -143,10 +143,15 @@
         console.log('Pathname:', window.location.pathname);
         console.log('Search:', window.location.search);
         
+        // Parse token from path: /share/TOKEN or query param ?token=TOKEN
         const urlParams = new URLSearchParams(window.location.search);
         const tokenFromQuery = urlParams.get('token');
-        const tokenFromPath = window.location.pathname.split('/').pop();
         
+        // Extract token from path: /share/TOKEN -> TOKEN
+        const pathParts = window.location.pathname.split('/').filter(p => p.length > 0);
+        const tokenFromPath = pathParts.length >= 2 ? pathParts[1] : null; // Index 0 is 'share', index 1 is TOKEN
+        
+        console.log('Path parts:', pathParts);
         console.log('Token from query param:', tokenFromQuery);
         console.log('Token from path:', tokenFromPath);
         
