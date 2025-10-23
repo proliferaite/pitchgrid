@@ -2,6 +2,7 @@
 http://pitchgrid.proliferaite.com/* https://pitchgridapp.com/:splat 301
 https://pitchgrid.proliferaite.com/* https://pitchgridapp.com/:splat 301
 
-# No share redirects needed - /share/TOKEN naturally serves /share/index.html with full path
+# Share link handler - serve /share/index.html for any /share/* path (200 = rewrite, preserves URL in browser)
+/share/* /share/ 200
 
 # Main domain (proliferaite.com) is separate parent company site - no redirects needed 
