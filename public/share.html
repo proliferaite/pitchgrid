@@ -126,7 +126,8 @@
 <body>
     <div class="container">
         <div class="logo">⚾️</div>
-        <h1>Shared PitchGrid</h1>
+        <h1 id="gridName">Shared PitchGrid</h1>
+        <p id="gridInfo" style="opacity: 0.7; font-size: 14px; margin-bottom: 10px;"></p>
         <p id="message">Opening this grid in the PitchGrid app...</p>
         <div class="status" id="status">
             <span class="spinner"></span>
@@ -143,8 +144,29 @@
         const message = document.getElementById('message');
         const status = document.getElementById('status');
         const openButton = document.getElementById('openButton');
+        const gridName = document.getElementById('gridName');
+        const gridInfo = document.getElementById('gridInfo');
+        
+        // Fetch grid metadata from API
+        async function loadGridMetadata() {
+            try {
+                const response = await fetch(`https://pitchgrid-api.proliferaite.workers.dev/shares/${shareToken}/metadata`);
+                if (response.ok) {
+                    const data = await response.json();
+                    gridName.textContent = data.name || 'Shared Grid';
+                    const clipText = data.clip_count === 1 ? '1 clip' : `${data.clip_count} clips`;
+                    gridInfo.textContent = `${data.owner_name} shared ${clipText} with you`;
+                    message.textContent = `Opening "${data.name}" in PitchGrid...`;
+                }
+            } catch (error) {
+                console.error('Failed to load grid metadata:', error);
+                // Continue with default text if metadata fails
+            }
+        }
         
         if (shareToken && shareToken !== 'share.html') {
+            // Load metadata in background
+            loadGridMetadata();
             // Construct deep link
             const deepLink = `pitchgrid://share/${shareToken}`;
             const universalLink = `https://pitchgridapp.com/share/${shareToken}`;
