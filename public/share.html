@@ -138,8 +138,20 @@
 
     <script>
         // Extract share token from URL
+        console.log('🔍 Share page loaded');
+        console.log('Full URL:', window.location.href);
+        console.log('Pathname:', window.location.pathname);
+        console.log('Search:', window.location.search);
+        
         const urlParams = new URLSearchParams(window.location.search);
-        const shareToken = urlParams.get('token') || window.location.pathname.split('/').pop();
+        const tokenFromQuery = urlParams.get('token');
+        const tokenFromPath = window.location.pathname.split('/').pop();
+        
+        console.log('Token from query param:', tokenFromQuery);
+        console.log('Token from path:', tokenFromPath);
+        
+        const shareToken = tokenFromQuery || tokenFromPath;
+        console.log('Final shareToken:', shareToken);
         
         const message = document.getElementById('message');
         const status = document.getElementById('status');
@@ -164,14 +176,24 @@
             }
         }
         
-        if (shareToken && shareToken !== 'share.html') {
+        // Validate token (should be 10 characters, alphanumeric)
+        const isValidToken = shareToken && 
+                            shareToken !== 'share.html' && 
+                            shareToken !== 'share' &&
+                            shareToken.length === 10 &&
+                            /^[a-z0-9]+$/.test(shareToken);
+        
+        if (isValidToken) {
             // Load metadata in background
             loadGridMetadata();
             // Construct deep link
             const deepLink = `pitchgrid://share/${shareToken}`;
             const universalLink = `https://pitchgridapp.com/share/${shareToken}`;
             
+            console.log('✅ Valid token, constructing deep link:', deepLink);
+            
             // Try to open the app immediately
+            console.log('🚀 Attempting to open app with deep link');
             window.location.href = deepLink;
             
             // If user is still here after 2 seconds, show manual button
@@ -198,9 +220,12 @@
                 }
             }, 3000);
         } else {
-            // No token provided
+            // Invalid or missing token
+            console.error('❌ Invalid token:', shareToken);
+            console.error('Token validation failed - must be 10 lowercase alphanumeric characters');
             status.innerHTML = '';
             message.textContent = "Invalid share link. Please check the URL and try again.";
+            message.style.color = '#ff6b6b';
         }
     </script>
 </body>
