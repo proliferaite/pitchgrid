@@ -191,21 +191,26 @@
         if (isValidToken) {
             // Load metadata in background
             loadGridMetadata();
-            // Construct deep link
-            const deepLink = `pitchgrid://share/${shareToken}`;
+            
+            // Use Universal Link (https://) for better compatibility
+            // Falls back to web if app not installed, opens app if installed
             const universalLink = `https://pitchgridapp.com/share/${shareToken}`;
             
-            console.log('✅ Valid token, constructing deep link:', deepLink);
+            // Keep custom scheme as fallback for very old app versions
+            const deepLink = `pitchgrid://share/${shareToken}`;
             
-            // Try to open the app immediately
-            console.log('🚀 Attempting to open app with deep link');
-            window.location.href = deepLink;
+            console.log('✅ Valid token, constructing universal link:', universalLink);
+            console.log('Fallback deep link:', deepLink);
+            
+            // Try to open the app immediately using Universal Link (more reliable)
+            console.log('🚀 Attempting to open app with universal link');
+            window.location.href = universalLink;
             
             // If user is still here after 2 seconds, show manual button
             setTimeout(() => {
                 status.style.display = 'none';
                 openButton.style.display = 'inline-block';
-                openButton.href = deepLink;
+                openButton.href = universalLink; // Use universal link for button too
                 message.textContent = "Tap the button below to open in PitchGrid";
             }, 2000);
             
