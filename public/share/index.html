@@ -158,6 +158,11 @@
         const shareToken = tokenFromQuery || tokenFromPath;
         console.log('Final shareToken:', shareToken);
         
+        // Detect redirect loop (if we've been here multiple times)
+        const visitCount = parseInt(sessionStorage.getItem('shareVisitCount') || '0') + 1;
+        sessionStorage.setItem('shareVisitCount', visitCount.toString());
+        console.log('Visit count:', visitCount);
+        
         const message = document.getElementById('message');
         const status = document.getElementById('status');
         const openButton = document.getElementById('openButton');
@@ -192,43 +197,100 @@
             // Load metadata in background
             loadGridMetadata();
             
-            // Use Universal Link (https://) for better compatibility
-            // Falls back to web if app not installed, opens app if installed
+            // Construct both link types
             const universalLink = `https://pitchgridapp.com/share/${shareToken}`;
-            
-            // Keep custom scheme as fallback for very old app versions
             const deepLink = `pitchgrid://share/${shareToken}`;
             
-            console.log('✅ Valid token, constructing universal link:', universalLink);
-            console.log('Fallback deep link:', deepLink);
+            console.log('✅ Valid token');
+            console.log('Universal link:', universalLink);
+            console.log('Deep link:', deepLink);
             
-            // Try to open the app immediately using Universal Link (more reliable)
-            console.log('🚀 Attempting to open app with universal link');
-            window.location.href = universalLink;
+            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+            const isAndroid = /Android/.test(navigator.userAgent);
             
-            // If user is still here after 2 seconds, show manual button
-            setTimeout(() => {
+            // If we've been here before (redirect loop), skip auto-redirect
+            if (visitCount > 2) {
+                console.warn('⚠️ Redirect loop detected, showing manual options');
                 status.style.display = 'none';
                 openButton.style.display = 'inline-block';
-                openButton.href = universalLink; // Use universal link for button too
-                message.textContent = "Tap the button below to open in PitchGrid";
-            }, 2000);
-            
-            // Fallback: If app isn't installed, redirect to App Store after 3 seconds
-            setTimeout(() => {
-                const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-                const isAndroid = /Android/.test(navigator.userAgent);
                 
-                if (isIOS) {
-                    message.textContent = "Don't have PitchGrid? Download from the App Store";
-                    openButton.textContent = "Download PitchGrid";
-                    openButton.href = "https://apps.apple.com/app/pitchgrid/id6738832132";
-                } else if (isAndroid) {
-                    message.textContent = "Don't have PitchGrid? Download from Google Play";
-                    openButton.textContent = "Download PitchGrid";
-                    openButton.href = "https://play.google.com/store/apps/details?id=com.proliferaite.pitchgrid";
-                }
-            }, 3000);
+                // Try custom scheme first (works for older app versions)
+                openButton.href = deepLink;
+                openButton.onclick = function(e) {
+                    e.preventDefault();
+                    console.log('🔗 Trying custom scheme:', deepLink);
+                    window.location.href = deepLink;
+                    
+                    // If custom scheme fails, show download option
+                    setTimeout(() => {
+                        if (isIOS) {
+                            message.textContent = "Need to update or install PitchGrid?";
+                            openButton.textContent = "Get PitchGrid from App Store";
+                            openButton.href = "https://apps.apple.com/app/pitchgrid/id6738832132";
+                            openButton.onclick = null; // Remove custom handler
+                        } else if (isAndroid) {
+                            message.textContent = "Need to update or install PitchGrid?";
+                            openButton.textContent = "Get PitchGrid from Google Play";
+                            openButton.href = "https://play.google.com/store/apps/details?id=com.proliferaite.pitchgrid";
+                            openButton.onclick = null;
+                        }
+                    }, 1500);
+                };
+                
+                message.textContent = "Tap the button below to open in PitchGrid";
+            } else {
+                // First visit: Try to open automatically
+                console.log('🚀 First visit, attempting auto-open');
+                
+                // Try custom scheme first (works immediately for installed apps)
+                console.log('Trying custom scheme:', deepLink);
+                window.location.href = deepLink;
+                
+                // After 1.5 seconds, show manual options
+                setTimeout(() => {
+                    status.style.display = 'none';
+                    openButton.style.display = 'inline-block';
+                    openButton.href = deepLink;
+                    message.textContent = "App didn't open? Tap the button below";
+                    
+                    // Try custom scheme on button click
+                    openButton.onclick = function(e) {
+                        e.preventDefault();
+                        console.log('🔗 Manual click, trying custom scheme');
+                        window.location.href = deepLink;
+                        
+                        // Show download option if that fails
+                        setTimeout(() => {
+                            if (isIOS) {
+                                message.textContent = "Need to update or install PitchGrid?";
+                                openButton.textContent = "Get PitchGrid from App Store";
+                                openButton.href = "https://apps.apple.com/app/pitchgrid/id6738832132";
+                                openButton.onclick = null;
+                            } else if (isAndroid) {
+                                message.textContent = "Need to update or install PitchGrid?";
+                                openButton.textContent = "Get PitchGrid from Google Play";
+                                openButton.href = "https://play.google.com/store/apps/details?id=com.proliferaite.pitchgrid";
+                                openButton.onclick = null;
+                            }
+                        }, 1500);
+                    };
+                }, 1500);
+                
+                // Always show download option after 3 seconds
+                setTimeout(() => {
+                    if (isIOS) {
+                        message.textContent = "Need to update or install PitchGrid?";
+                        openButton.textContent = "Get PitchGrid from App Store";
+                        openButton.href = "https://apps.apple.com/app/pitchgrid/id6738832132";
+                        openButton.onclick = null;
+                    } else if (isAndroid) {
+                        message.textContent = "Need to update or install PitchGrid?";
+                        openButton.textContent = "Get PitchGrid from Google Play";
+                        openButton.href = "https://play.google.com/store/apps/details?id=com.proliferaite.pitchgrid";
+                        openButton.onclick = null;
+                    }
+                }, 3000);
+            }
         } else {
             // Invalid or missing token
             console.error('❌ Invalid token:', shareToken);
