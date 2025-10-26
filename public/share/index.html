@@ -118,6 +118,27 @@
             animation: spin 1s ease-in-out infinite;
         }
         
+        .info-box {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+            font-size: 15px;
+            line-height: 1.6;
+            display: none;
+        }
+        
+        .info-box.show {
+            display: block;
+        }
+        
+        .info-box strong {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
@@ -133,6 +154,10 @@
             <span class="spinner"></span>
         </div>
         <a href="#" class="button" id="openButton" style="display:none;">Open in PitchGrid</a>
+        <div class="info-box" id="infoBox">
+            <strong>⚠️ Important:</strong>
+            After installing or updating PitchGrid, return to this page and tap the "Open in PitchGrid" button above to view the shared grid. If you just open the app directly, you'll see an empty screen.
+        </div>
         <a href="/" class="secondary-button">Go to Homepage</a>
     </div>
 
@@ -168,6 +193,7 @@
         const openButton = document.getElementById('openButton');
         const gridName = document.getElementById('gridName');
         const gridInfo = document.getElementById('gridInfo');
+        const infoBox = document.getElementById('infoBox');
         
         // Fetch grid metadata from API
         async function loadGridMetadata() {
@@ -228,11 +254,13 @@
                             openButton.textContent = "Get PitchGrid from App Store";
                             openButton.href = "https://apps.apple.com/app/pitchgrid/id6748971191";
                             openButton.onclick = null; // Remove custom handler
+                            infoBox.classList.add('show');
                         } else if (isAndroid) {
                             message.textContent = "Need to update or install PitchGrid?";
                             openButton.textContent = "Get PitchGrid from Google Play";
                             openButton.href = "https://play.google.com/store/apps/details?id=com.proliferaite.pitchgrid";
                             openButton.onclick = null;
+                            infoBox.classList.add('show');
                         }
                     }, 1500);
                 };
@@ -266,11 +294,13 @@
                                 openButton.textContent = "Get PitchGrid from App Store";
                                 openButton.href = "https://apps.apple.com/app/pitchgrid/id6748971191";
                                 openButton.onclick = null;
+                                infoBox.classList.add('show');
                             } else if (isAndroid) {
                                 message.textContent = "Need to update or install PitchGrid?";
                                 openButton.textContent = "Get PitchGrid from Google Play";
                                 openButton.href = "https://play.google.com/store/apps/details?id=com.proliferaite.pitchgrid";
                                 openButton.onclick = null;
+                                infoBox.classList.add('show');
                             }
                         }, 1500);
                     };
@@ -283,11 +313,13 @@
                         openButton.textContent = "Get PitchGrid from App Store";
                         openButton.href = "https://apps.apple.com/app/pitchgrid/id6748971191";
                         openButton.onclick = null;
+                        infoBox.classList.add('show');
                     } else if (isAndroid) {
                         message.textContent = "Need to update or install PitchGrid?";
                         openButton.textContent = "Get PitchGrid from Google Play";
                         openButton.href = "https://play.google.com/store/apps/details?id=com.proliferaite.pitchgrid";
                         openButton.onclick = null;
+                        infoBox.classList.add('show');
                     }
                 }, 3000);
             }
